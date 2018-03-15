@@ -7,11 +7,11 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>CADASTRO DE PROFESSOR</title>
+        <title>CADASTRO DE FUNCIONARIO</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>CADASTRO DE PROFESSOR</div>
+        <div>CADASTRO DE FUNCIONARIO</div>
         <form name = "cadastro-novo-professor" action="CadastroProfessor.php" method="post">
             
             
@@ -50,7 +50,11 @@ and open the template in the editor.
      </td></tr>
      <tr><td>
      <label for="name">Ctps:</label>
-     <input type="text" id="Ctps" />
+     <input type="text" id="ctps" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Pis:</label>
+     <input type="text" id="pis" />
      </td></tr>
  </table>
 </fieldset>
@@ -60,23 +64,28 @@ and open the template in the editor.
      <table>
      <tr><td>
      <label for="name">E-mail:</label>
-     <input type="Email" id="email" />
+     <input type="email" id="email"/>
      </td></tr>   
      <tr><td>
      <label for="name">E-mail Alternativo:</label>
      <input type="text" id="emailalternativo" />
-     <tr> <td>
-     <label for="name">Telefone Residencial:</label>
-     <input type="text" id="foneresidencial" />
-     </td></tr>
      </td></tr>
      <tr><td>
+     <label for="name">Telefone Residencial:</label>
+     <input type="tel" id="foneresidencial" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Ramal:</label>
+     <input type="number" id="ramal" />
+     </td></tr>
+    
+     <tr><td>
      <label for="name">Telefone Celular 01:</label>
-     <input type="text" id="telefonecelular01" />
+     <input type="tel" id="telefonecelular01" />
      </td></tr>
      <tr><td>
      <label for="name">Telefone Celular 02:</label>
-     <input type="text" id="telefonecelular02" />
+     <input type="tel" id="telefonecelular02" />
      </td></tr>
          
          
@@ -84,7 +93,57 @@ and open the template in the editor.
      
      
  </fieldset>
+ <fieldset>
+     <legend>Endereço</legend>
+     <br/>
+     <table>
+     <tr><td>
+     <label for="name">Cep:</label>
+     <input type="number" id="cep" />
+     </td></tr> 
+     <tr><td>
+     <label for="name">Estado:</label>
+     <input type="text" id="estado" />
+     </td></tr>   
+     <tr><td>
+     <label for="name">Cidade:</label>
+     <input type="text" id="cidade" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Bairro:</label>
+     <input type="text" id="bairro" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Nome da Rua:</label>
+     <input type="text" id="rua" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Numero:</label>
+     <input type="number" id="numero" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Complemento:</label>
+     <input type="text" id="complemento" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Ponto de Referencia:</label>
+     <input type="text" id="referencia" />
+     </td></tr> 
+     <tr><td>
+     <label for="name">Pessoa de Referencia 01:</label>
+     <input type="text" id="pessoa01" />
+     </td></tr>
+     <tr><td>
+     <label for="name">Pessoa de Referencia 02:</label>
+     <input type="text" id="pessoa02" />
+     </td></tr>
+         
+     </table>
+     
+     
+ </fieldset>
 
+<br/>
         <div class="button">
         <button type="submit">Finalizar Cadastro</button>
         </div>  
@@ -98,3 +157,4 @@ and open the template in the editor.
            
     </body>
 </html>
+
