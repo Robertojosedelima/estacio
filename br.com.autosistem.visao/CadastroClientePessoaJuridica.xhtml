@@ -7,70 +7,39 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>CADASTRO DE FUNCIONARIO</title>
+        <title>CADASTRO DE CLIENTE PESSOA JURIDICA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>CADASTRO DE FUNCIONARIO</div>
+        <div>CADASTRO DE CLIENTE PESSOA JURIDICA</div>
         <form name = "cadastro-novo-professor" action="CadastroProfessor.php" method="post">
             
             
- <!-- DADOS PESSOAIS-->
+ <!-- DADOS CLIENTE JURIDICO-->
 <fieldset>
  <legend>Dados Pessoais</legend>
    <br/> 
  <table >
   
      <tr><td>
-     <label for="name">Nome:</label>
-     <input type="text" id="name" />
+     <label for="name">Razão Social:</label>
+     <input type="text" id="razaosocial" />
      </td></tr>
      <tr><td>
-     <label for="name">Sobre Nome:</label>
-     <input type="text" id="sobrenome" />
+     <label for="name">Nome Fantasia:</label>
+     <input type="text" id="nomefantasia" />
      </td></tr>
      <tr><td>
-     <label for="name">Data De Nascimento:</label>
-     <input type="date" id="datanascimento" />
+     <label for="name">Data De Parceria:</label>
+     <input type="date" id="dataparceria" />
      </td></tr>
      <tr><td>
-     <label for="name">Naturalidade:</label>
-     <input type="text" id="naturalidade" />
+     <label for="name">CPF/CNPJ:</label>
+     <input type="number" id="cpfcnpj" />
      </td></tr>
      <tr><td>
-     <label for="name">Nacionalidade:</label>
-     <input type="text" id="nacionalidade" />
-     </td></tr>
-     <tr><td>
-     <label for="name">Sexo:</label>
-     <select name="sexo">
-         <option>Masculino</option>
-         <option>Feminino</option>
-     </select>
-     </td></tr>
-     <tr><td>
-     <label for="name">Estado Civil:</label>
-     <select name="estadocivil">
-         <option>Solteiro</option>
-         <option>Casado</option>
-         <option>Divorciado</option>
-     </select>
-     </td></tr>
-     <tr><td>
-     <label for="name">Rg:</label>
-     <input type="number" id="rg"/>
-     </td></tr>
-      <tr><td>
-     <label for="name">Cpf:</label>
-     <input type="number" id="cpf" />
-     </td></tr>
-     <tr><td>
-     <label for="name">Ctps:</label>
-     <input type="number" id="ctps" />
-     </td></tr>
-     <tr><td>
-     <label for="name">Pis:</label>
-     <input type="number" id="pis" />
+     <label for="name">NIT ou PIS/PASEP:</label>
+     <input type="number" id="nitpispasep" />
      </td></tr>
  </table>
 </fieldset>
@@ -195,12 +164,5 @@ and open the template in the editor.
         </div>  
             
         </form>
-            
-            
-            
-            
-            
-           
     </body>
 </html>
-
