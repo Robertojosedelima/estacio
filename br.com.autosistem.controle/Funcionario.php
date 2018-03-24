@@ -7,10 +7,21 @@
  */
 
 /**
- * Description of Funcionario
+
  *
  * @author drop-
  */
-class Funcionario {
+require_once 'PessoaFisica.php';
+class Funcionario extends PessoaFisica{
     //put your code here
+    private $funcao;
+    public function getFuncao() {
+        return $this->funcao;
+    }
+
+    public function setFuncao($funcao) {
+        $this->funcao = $funcao;
+    }
+
+
 }

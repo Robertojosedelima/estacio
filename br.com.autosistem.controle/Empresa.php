@@ -7,10 +7,30 @@
  */
 
 /**
- * Description of Empresa
+ 
  *
  * @author drop-
  */
-class Empresa {
+require_once 'PessoaJuridica.php';
+class Empresa extends PessoaJuridica{
     //put your code here
+    private $login;
+    private $senha;
+    public function getLogin() {
+        return $this->login;
+    }
+
+    public function getSenha() {
+        return $this->senha;
+    }
+
+    public function setLogin($login) {
+        $this->login = $login;
+    }
+
+    public function setSenha($senha) {
+        $this->senha = $senha;
+    }
+
+
 }

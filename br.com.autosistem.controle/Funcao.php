@@ -7,10 +7,47 @@
  */
 
 /**
- * Description of Funcao
+ 
  *
  * @author drop-
  */
 class Funcao {
     //put your code here
+    private $nome;
+    private $descricao;
+    private $carga_horaria_semanal;
+    private $salario;
+    public function getNome() {
+        return $this->nome;
+    }
+
+    public function getDescricao() {
+        return $this->descricao;
+    }
+
+    public function getCarga_horaria_semanal() {
+        return $this->carga_horaria_semanal;
+    }
+
+    public function getSalario() {
+        return $this->salario;
+    }
+
+    public function setNome($nome) {
+        $this->nome = $nome;
+    }
+
+    public function setDescricao($descricao) {
+        $this->descricao = $descricao;
+    }
+
+    public function setCarga_horaria_semanal($carga_horaria_semanal) {
+        $this->carga_horaria_semanal = $carga_horaria_semanal;
+    }
+
+    public function setSalario($salario) {
+        $this->salario = $salario;
+    }
+
+
 }
