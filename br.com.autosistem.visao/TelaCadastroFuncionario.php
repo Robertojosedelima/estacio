@@ -11,10 +11,11 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
+
+   
         <div>CADASTRO DE FUNCIONARIO</div>
         <form name = "cadastro-novo-funcionario.php" action ="CadastroFuncionario.php" method="post">
-            
-            
+       
  <!-- DADOS PESSOAIS-->
 <fieldset>
  <legend>Dados Pessoais</legend>
@@ -23,11 +24,14 @@ and open the template in the editor.
      <tr><td>
      <label for="name">Função:</label>
      <select name="funcao">
-         <option>aqui precisa fazer um select</option>
-         <option></option>
-         <option></option>
+         <option><?php echo "teamo"; ?></option>
+         
      </select>
      </td></tr>
+     <tr><td>
+     <label for="name">Codigo da Função:</label>
+     <input type="text" name="codigodafuncao" disabled=""/>
+     </td></tr> 
      <tr><td>
      <label for="name">Nome:</label>
      <input type="text" name="nome" />
@@ -210,4 +214,3 @@ and open the template in the editor.
            
     </body>
 </html>
-
