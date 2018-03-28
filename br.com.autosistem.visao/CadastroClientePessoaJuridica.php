@@ -1,5 +1,6 @@
 <?php
-//RECEBENDO DADOS DO FOMULARIO
+include("../br.com.autosistem.controle/PessoaJuridica.php");
+include("../br.com.autosistem.modelo/CadastroClientePessoaJuridicaBD.php");
 
 $razao_social = $_POST["razaosocial"];
 $nome_fantasia = $_POST["nomefantasia"];
@@ -26,8 +27,45 @@ $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
 
-//teste do post
-print_r($_POST);
+$pj = new PessoaJuridica();
+$ccpjbd = new CadastroClientePessoaJuridicaBD();
+
+$pj->setRazao_social($razao_social);
+$pj->setNome_fantasia($nome_fantasia);
+$pj->setData_parceria($data_parceria);
+$pj->setCpf_cnpj($cpf_cnpj);
+$pj->setNit_pis_pasep($nit_pis_pasep);
+$pj->setEmail($email);
+$pj->setEmail_alternativo($email_alternativo);
+$pj->setTelefone_residencial($telefone_residencial);
+$pj->setRamal($ramal);
+$pj->setTelefone_celular01($telefone_celular01);
+$pj->setTelefone_celular02($telefone_celular02);
+
+//-------------------------------------------------------
+
+$pj->setCep($cep);
+$pj->setEstado($estado);
+$pj->setCidade($cidade);
+$pj->setBairro($bairro);
+$pj->setRua($rua);
+$pj->setNumero($numero);
+$pj->setComplemento($complemento);
+$pj->setPonto_referencia($referencia);
+$pj->setPessoa_referencia01($pessoa_referencia01);
+$pj->setPessoa_referencia02($pessoa_referencia02);
+
+//-------------------------------------------------------
+//chama metodo inserir
+
+$ccpjbd->inserir(
+        $pj->getRazao_social(), $pj->getNome_fantasia(), $pj->getData_parceria(), $pj->getCpf_cnpj(), 
+        $pj->getNit_pis_pasep(), $pj->getEmail(), $pj->getEmail_alternativo(), $pj->getTelefone_residencial(), 
+        $pj->getRamal(), $pj->getTelefone_celular01(), $pj->getTelefone_celular02(), $pj->getCep(), 
+        $pj->getEstado(), $pj->getCidade(), $pj->getBairro(), $pj->getRua(), $pj->getNumero(), 
+        $pj->getComplemento(), $pj->getPonto_referencia(), $pj->getPessoa_referencia01(), 
+        $pj->getPessoa_referencia02());
+
 
 
 

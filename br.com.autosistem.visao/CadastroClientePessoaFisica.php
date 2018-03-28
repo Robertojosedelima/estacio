@@ -1,5 +1,6 @@
 <?php
-//RECEBENDO DADOS DO FOMULARIO
+include("../br.com.autosistem.controle/PessoaFisica.php");
+include("../br.com.autosistem.modelo/CadastroClientePessoaFisicaBD.php");
 
 $nome = $_POST["nome"];
 $sobre_nome = $_POST["sobrenome"];
@@ -25,9 +26,45 @@ $referencia = $_POST["referencia"];
 $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
+$pf = new PessoaFisica();
+$ccpfbd = new CadastroClientePessoaFisicaBD();
 
-//teste do post
-print_r($_POST);
+$pf->setNome($nome);
+$pf->setSobre_nome($sobre_nome);
+$pf->setSexo($sexo);
+$pf->setRg($rg);
+$pf->setCpf($cpf);
+$pf->setEmail($email);
+$pf->setEmail_alternativo($email_alternativo);
+$pf->setTelefone_residencial($telefone_residencial);
+$pf->setRamal($ramal);
+$pf->setTelefone_celular01($telefone_celular01);
+$pf->setTelefone_celular02($telefone_celular02);
+
+//-------------------------------------------------------
+
+$pf->setCep($cep);
+$pf->setEstado($estado);
+$pf->setCidade($cidade);
+$pf->setBairro($bairro);
+$pf->setRua($rua);
+$pf->setNumero($numero);
+$pf->setComplemento($complemento);
+$pf->setPonto_referencia($referencia);
+$pf->setPessoa_referencia01($pessoa_referencia01);
+$pf->setPessoa_referencia02($pessoa_referencia02);
+
+//-------------------------------------------------------
+//chama metodo inserir
+
+$ccpfbd->inserir(
+        $pf->getNome(), $pf->getSobre_nome(), $pf->getSexo(), $pf->getRg(), 
+        $pf->getCpf(), $pf->getEmail(), $pf->getEmail_alternativo(), $pf->getTelefone_residencial(), 
+        $pf->getRamal(), $pf->getTelefone_celular01(), $pf->getTelefone_celular02(), $pf->getCep(), 
+        $pf->getEstado(), $pf->getCidade(), $pf->getBairro(), $pf->getRua(), $pf->getNumero(), 
+        $pf->getComplemento(), $pf->getPonto_referencia(), $pf->getPessoa_referencia01(), 
+        $pf->getPessoa_referencia02());
+
 
 
 

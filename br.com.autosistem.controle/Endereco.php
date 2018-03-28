@@ -7,11 +7,11 @@
  */
 
 /**
- 
+
  *
  * @author drop-
  */
-class Endereco {
+abstract class Endereco {
     //put your code here
     private $cep;
     private $estado;

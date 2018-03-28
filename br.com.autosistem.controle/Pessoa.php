@@ -16,10 +16,18 @@ abstract class Pessoa extends Endereco{
  private $email;
  private $email_alternativo;
  private $telefone_residencial;
+ private $ramal;
  private $telefone_celular01;
  private $telefone_celular02;
- 
- public function getEmail() {
+ public function getRamal() {
+     return $this->ramal;
+ }
+
+ public function setRamal($ramal) {
+     $this->ramal = $ramal;
+ }
+
+  public function getEmail() {
      return $this->email;
  }
 
