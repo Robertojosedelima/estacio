@@ -21,8 +21,8 @@ and open the template in the editor.
    <br/> 
  <table>
      <tr><td>
-     <label for="name">Função:</label>
-     <select name="funcao">
+     <label for="name">Area:</label>
+     <select name="area">
          <option>administrativo</option>
          <option>operacional</option>
          <option>vendas</option>
@@ -36,8 +36,12 @@ and open the template in the editor.
      <br/>
      <table>
      <tr><td>
-     <label for="name">Matricula:</label>
-     <input type="number" name="matricula"/>
+     <label for="name">Nome:</label>
+     <input type="text" name="nome"/>
+     </td></tr>
+     <tr><td>
+     <label for="name">Cpf:</label>
+     <input type="number" name="cpf" disabled=""/>
      </td></tr>   
     
      </table>

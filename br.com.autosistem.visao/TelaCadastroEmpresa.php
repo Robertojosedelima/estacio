@@ -169,23 +169,7 @@ and open the template in the editor.
      
      
  </fieldset>
-<fieldset>
-     <legend>Dados de Login</legend>
-     <br/>
-     <table>
-     <tr><td>
-     <label for="name">Login:</label>
-     <input type="text" name="login"/>
-     </td></tr>   
-     <tr><td>
-     <label for="name">Senha:</label>
-     <input type="password" name="senha" />
-     </td></tr>
-   
-     </table>
-     
-     
- </fieldset>
+
 <br/>
         <div class="button">
         <button type="submit">Finalizar Cadastro</button>
