@@ -11,6 +11,21 @@
  *
  * @author drop-
  */
+require_once '../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroUsuarioBD {
-    //put your code here
+    function inserir($area, $funcionario, $login, $senha){
+        $cbd = new ConexaoBD();
+        
+        $query = "INSERT INTO cadastro_usuario (funcionario_fk,area,usuario,senha) VALUES ('$funcionario','$area','$login','$senha')";
+        $insert = mysqli_query($cbd->conecta(),$query);
+        
+    if($insert){
+        echo "Usuario Cadastrado Com Sucesso!";
+    } else {
+        echo "erro ao tentar inserir";
+    }
+    
+        
+    }
+
 }

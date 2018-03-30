@@ -13,16 +13,16 @@
  */
 class Usuario {
     //put your code here
-    private $funcao;
-    private $matricula;
+    private $area;
+    private $funcionario;
     private $login;
     private $senha;
-    public function getFuncao() {
-        return $this->funcao;
+    public function getArea() {
+        return $this->area;
     }
 
-    public function getMatricula() {
-        return $this->matricula;
+    public function getFuncionario() {
+        return $this->funcionario;
     }
 
     public function getLogin() {
@@ -33,12 +33,12 @@ class Usuario {
         return $this->senha;
     }
 
-    public function setFuncao($funcao) {
-        $this->funcao = $funcao;
+    public function setArea($area) {
+        $this->area = $area;
     }
 
-    public function setMatricula($matricula) {
-        $this->matricula = $matricula;
+    public function setFuncionario($funcionario) {
+        $this->funcionario = $funcionario;
     }
 
     public function setLogin($login) {
@@ -48,6 +48,7 @@ class Usuario {
     public function setSenha($senha) {
         $this->senha = $senha;
     }
+
 
 
 }

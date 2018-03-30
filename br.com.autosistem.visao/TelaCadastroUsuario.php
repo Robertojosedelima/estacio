@@ -5,6 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+<?php
+require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>CADASTRO DE USUARIO</title>
@@ -23,9 +27,9 @@ and open the template in the editor.
      <tr><td>
      <label for="name">Area:</label>
      <select name="area">
-         <option>administrativo</option>
-         <option>operacional</option>
-         <option>vendas</option>
+         <option >Administrativo</option>
+         <option >Operacional </option>
+         <option selected="">Vendas</option>
      </select>
      </td></tr>   
 
@@ -37,14 +41,24 @@ and open the template in the editor.
      <table>
      <tr><td>
      <label for="name">Nome:</label>
-     <input type="text" name="nome"/>
+     <select name ="funcionario">
+    <?php
+    $cbd = new ConexaoBD();
+    $sql = "select * from cadastro_funcionario";
+    $resultado = mysqli_query($cbd->conecta(),$sql);
+    while ($dados = mysqli_fetch_array($resultado)){
+        $codigo = $dados['cpf'];
+        $nome = $dados['nome'];
+        $sobre_nome = $dados['sobre_nome'];
+        echo"<option value='$codigo'>$nome $sobre_nome  / Cpf:$codigo</option>";
+        
+       }
+   
+    ?>
+   
+</select>
      </td></tr>
-     <tr><td>
-     <label for="name">Cpf:</label>
-     <input type="number" name="cpf" disabled=""/>
-     </td></tr>   
-    
-     </table>
+    </table>
      
      
  </fieldset>
