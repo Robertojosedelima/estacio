@@ -1,6 +1,6 @@
 <?php
-include("../../br.com.autosistem.controle/Funcionario.php");
-include("../../br.com.autosistem.modelo/CadastroFuncionarioBD.php");
+include("../../br.com.autosistem.controle/controle.empresa/Funcionario.php");
+include("../../br.com.autosistem.modelo/modelo.empresa/CadastroFuncionarioBD.php");
 
 $funcao = $_POST["funcao"];
 $nome = $_POST["nome"];

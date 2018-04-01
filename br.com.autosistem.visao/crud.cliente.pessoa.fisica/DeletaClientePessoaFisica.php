@@ -1,5 +1,5 @@
 <?php
-include("../../br.com.autosistem.modelo/CadastroClientePessoaFisicaBD.php");
+include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaFisicaBD.php");
 $id=$_GET["id"];
 
 $ccpf = new CadastroClientePessoaFisicaBD();

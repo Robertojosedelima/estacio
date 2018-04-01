@@ -1,7 +1,7 @@
    
 <?php
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
-include("../../br.com.autosistem.modelo/CadastroClientePessoaFisicaBD.php");
+include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaFisicaBD.php");
 
 $cbd = new ConexaoBD();
     $sql = "select * from cadastro_funcionario";
