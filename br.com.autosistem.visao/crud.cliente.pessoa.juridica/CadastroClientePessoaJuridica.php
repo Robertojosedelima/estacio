@@ -1,6 +1,6 @@
 <?php
-include("../br.com.autosistem.controle/PessoaJuridica.php");
-include("../br.com.autosistem.modelo/CadastroClientePessoaJuridicaBD.php");
+include("../../br.com.autosistem.controle/PessoaJuridica.php");
+include("../../br.com.autosistem.modelo/CadastroClientePessoaJuridicaBD.php");
 
 $razao_social = $_POST["razaosocial"];
 $nome_fantasia = $_POST["nomefantasia"];

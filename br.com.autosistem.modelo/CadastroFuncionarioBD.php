@@ -11,7 +11,7 @@
  *
  * @author drop-
  */
-require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroFuncionarioBD {
   function inserir
     ($funcao, $nome, $sobre_nome, $data_nascimento, $naturalidade, $nacionalidade, $sexo, $estado_civil, $rg, $cpf, $ctps, $pis, $email, $email_alternativo, $telefone_residencial, $ramal, 

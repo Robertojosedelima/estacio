@@ -1,6 +1,6 @@
 <?php
-include("../br.com.autosistem.controle/Funcao.php");
-include("../br.com.autosistem.modelo/CadastroFuncaoBD.php");
+include("../../br.com.autosistem.controle/Funcao.php");
+include("../../br.com.autosistem.modelo/CadastroFuncaoBD.php");
 //RECEBENDO DADOS DO FOMULARIO
 $nome_funcao = $_POST["nomedafuncao"];
 $descricao_funcao = $_POST["descricaodafuncao"];

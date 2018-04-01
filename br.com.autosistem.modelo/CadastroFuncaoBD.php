@@ -12,7 +12,7 @@
  * @author drop-
  */
 
-require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroFuncaoBD {
  function inserir($nome, $descricao, $carga_horaria_semanal, $salario){
         $cbd = new ConexaoBD();

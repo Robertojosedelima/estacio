@@ -1,6 +1,6 @@
 <?php
-include("../br.com.autosistem.controle/Usuario.php");
-include("../br.com.autosistem.modelo/CadastroUsuarioBD.php");
+include("../../br.com.autosistem.controle/Usuario.php");
+include("../../br.com.autosistem.modelo/CadastroUsuarioBD.php");
 $area = $_POST["area"];
 $funcionario = $_POST["funcionario"];
 $login = $_POST["login"];

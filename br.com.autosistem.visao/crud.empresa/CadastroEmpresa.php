@@ -1,6 +1,6 @@
 <?php
-include("../br.com.autosistem.controle/Empresa.php");
-include("../br.com.autosistem.modelo/CadastroEmpresaBD.php");
+include("../../br.com.autosistem.controle/Empresa.php");
+include("../../br.com.autosistem.modelo/CadastroEmpresaBD.php");
 $razao_social = $_POST["razaosocial"];
 $nome_fantasia = $_POST["nomefantasia"];
 $data_parceria = $_POST["dataparceria"];

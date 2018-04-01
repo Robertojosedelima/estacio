@@ -11,7 +11,7 @@
  *
  * @author drop-
  */
-require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroUsuarioBD {
     function inserir($area, $funcionario, $login, $senha){
         $cbd = new ConexaoBD();

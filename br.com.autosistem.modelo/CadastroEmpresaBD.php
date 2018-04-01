@@ -11,7 +11,7 @@
  *
  * @author drop-
  */
-require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroEmpresaBD {
      function inserir
     ($razao_social, $nome_fantasia, $data_parceria, $cpf_cnpj, $nit_pis_pasep, $email, $email_alternativo, $telefone_residencial, $ramal, 
