@@ -1,6 +1,6 @@
 <?php
-include("../br.com.autosistem.controle/PessoaFisica.php");
-include("../br.com.autosistem.modelo/CadastroClientePessoaFisicaBD.php");
+include("../../br.com.autosistem.controle/PessoaFisica.php");
+include("../../br.com.autosistem.modelo/CadastroClientePessoaFisicaBD.php");
 
 $nome = $_POST["nome"];
 $sobre_nome = $_POST["sobrenome"];
