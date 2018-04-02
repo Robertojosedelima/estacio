@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>CADASTRO DE CLIENTE PESSOA JURIDICA</div>
-        <form name = "cadastro-novo-cliente-pessoa-juridica" action="CadastroClientePessoaJuridica.php" method="post">
+        <form name = "cadastro-novo-cliente-pessoa-juridica" action="CadastraClientePessoaJuridica.php" method="post">
             
             
  <!-- DADOS CLIENTE JURIDICO-->

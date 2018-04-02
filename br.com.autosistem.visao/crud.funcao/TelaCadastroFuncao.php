@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
              <div>CADASTRO DE FUNÇÃO</div>
-        <form name = "cadastro-nova-funcao" action="CadastroFuncao.php" method="post">
+        <form name = "cadastro-nova-funcao" action="CadastraFuncao.php" method="post">
             
             
  <!-- DADOS FUNCAO-->

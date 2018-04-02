@@ -16,7 +16,7 @@ require_once '../br.com.autosistem.conexao/ConexaoBD.php';
     </head>
     <body>
           <div>CADASTRO DE USUARIO</div>
-        <form name = "cadastro-novo-usuario" action="CadastroUsuario.php" method="post">
+        <form name = "cadastro-novo-usuario" action="CadastraUsuario.php" method="post">
             
             
  <!-- DADOS USUARIO-->

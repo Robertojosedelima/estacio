@@ -29,6 +29,47 @@ class CadastroFuncaoBD {
         
     }
 
-
+     function alterar
+   ($codigo,$nome, $descricao, $carga_horaria_semanal, $salario){
+      $cbd = new ConexaoBD();
+      $query = "UPDATE cadastro_funcao SET codigo='$codigo',"
+              . "nome='$nome',descricao='$descricao',"
+              . "carga_horaria_semanal='$carga_horaria_semanal',salario='$salario' WHERE codigo='$codigo'";
+                      
+      
+       $update = mysqli_query($cbd->conecta(),$query);
    
+        if($update){
+        
+        echo "Funcao Alterada Com Sucesso!";
+        header('refresh:2, GerenciaCadastroFuncao.php');
+        
+    } else {
+        echo "erro ao tentar alterar";
+        header('refresh:2, GerenciaCadastroFuncao.php');
+    }
+        
+        
+    
+        
+    }
+    function excluir
+    ($codigo){
+      $cbd = new ConexaoBD();
+       $query = "DELETE FROM cadastro_funcao WHERE codigo='$codigo'";
+                      
+      
+       $delete = mysqli_query($cbd->conecta(),$query);
+        
+        if($delete){
+        
+        echo "Funcao Excluida Com Sucesso!";
+        header('refresh:2, GerenciaCadastroFuncao.php');
+        
+    } else {
+        echo "erro ao tentar excluir";
+        header('refresh:2, GerenciaCadastroFuncao.php');
+   
+}
+    }
 }

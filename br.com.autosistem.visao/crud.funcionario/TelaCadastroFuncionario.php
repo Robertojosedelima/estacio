@@ -14,7 +14,7 @@ and open the template in the editor.
 
    
         <div>CADASTRO DE FUNCIONARIO</div>
-        <form name = "cadastro-novo-funcionario.php" action ="CadastroFuncionario.php" method="post">
+        <form name = "cadastro-novo-funcionario.php" action ="CadastraFuncionario.php" method="post">
        
  <!-- DADOS PESSOAIS-->
 <fieldset>

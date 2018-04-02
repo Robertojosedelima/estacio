@@ -27,5 +27,47 @@ class CadastroUsuarioBD {
     
         
     }
-
+     function alterar
+   ($area, $funcionario, $login, $senha){
+      $cbd = new ConexaoBD();
+      $query = "UPDATE cadastro_usuario SET codigo='$codigo',"
+              . "login='$login',senha='$senha'"
+              . " WHERE codigo='$codigo'";
+                      
+      
+       $update = mysqli_query($cbd->conecta(),$query);
+   
+        if($update){
+        
+        echo "Usuario Alterado Com Sucesso!";
+        header('refresh:2, GerenciaCadastroUsuario.php');
+        
+    } else {
+        echo "erro ao tentar alterar";
+        header('refresh:2, GerenciaCadastroUsuario.php');
+    }
+        
+        
+    
+        
+    }
+    function excluir
+    ($codigo){
+      $cbd = new ConexaoBD();
+       $query = "DELETE FROM cadastro_usuario WHERE codigo='$codigo'";
+                      
+      
+       $delete = mysqli_query($cbd->conecta(),$query);
+        
+        if($delete){
+        
+        echo "Usuario Excluido Com Sucesso!";
+        header('refresh:2, GerenciaCadastroUsuario.php');
+        
+    } else {
+        echo "erro ao tentar excluir";
+        header('refresh:2, GerenciaCadastroUsuario.php');
+   
+}
+    }
 }
