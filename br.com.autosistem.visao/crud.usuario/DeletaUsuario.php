@@ -5,4 +5,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
+$id=$_GET["id"];
 
+$cubd = new CadastroUsuarioBD();
+$cubd->excluir($id);
+
+                    

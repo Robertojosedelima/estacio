@@ -1,8 +1,22 @@
 <?php
+include("../../br.com.autosistem.controle/controle.empresa/Funcao.php");
+include("../../br.com.autosistem.modelo/modelo.empresa/CadastroFuncaoBD.php");
+//RECEBENDO DADOS DO FOMULARIO
+$codigo= $_POST["codigo"];
+$nome_funcao = $_POST["nomedafuncao"];
+$descricao_funcao = $_POST["descricaodafuncao"];
+$carga_horaria_semanal = $_POST["cargahorariasemanal"];
+$salario = $_POST["salario"];
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+
+        $cf = new Funcao();
+        $cf->setCodigo($codigo);
+        $cf->setNome($nome_funcao);
+        $cf->setDescricao($descricao_funcao);
+        $cf->setCarga_horaria_semanal($carga_horaria_semanal);
+        $cf->setSalario($salario);
+        $cfbd = new CadastroFuncaoBD();
+        
+        $cfbd->alterar($cf->getCodigo(), $cf->getNome(), $cf->getDescricao(), $cf->getCarga_horaria_semanal(), $cf->getSalario());
+?>

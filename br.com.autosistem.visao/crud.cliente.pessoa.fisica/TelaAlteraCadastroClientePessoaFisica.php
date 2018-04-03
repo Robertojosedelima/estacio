@@ -14,6 +14,7 @@ $cbd = new ConexaoBD();
     $sql = "select * from endereco WHERE codigo='$id'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     $dados1 = mysqli_fetch_assoc($resultado);
+    
 
 ?>
 
@@ -184,7 +185,7 @@ $cbd = new ConexaoBD();
 
 <br/>
         <div class="button">
-        <button type="submit">Finalizar Cadastro</button>
+        <button type="submit">Alterar Cadastro</button>
         </div>  
             
         </form>

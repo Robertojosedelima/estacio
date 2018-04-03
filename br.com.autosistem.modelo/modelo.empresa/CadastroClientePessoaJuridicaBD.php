@@ -36,8 +36,10 @@ class CadastroClientePessoaJuridicaBD {
          
     if($insert){
         echo "Cliente Cadastrado Com Sucesso!";
+        header('refresh:2, GerenciaCadastroClientePessoaJuridica.php');
     } else {
         echo "erro ao tentar inserir";
+        header('refresh:2, GerenciaCadastroClientePessoaJuridica.php');
     }
     }
     
@@ -64,7 +66,7 @@ class CadastroClientePessoaJuridicaBD {
                . "telefone_residencial='$telefone_residencial',"
                . "ramal='$ramal',telefone_celular01='$telefone_celular01',"
                . "telefone_celular02='$telefone_celular02',fk_endereco='$cpf_cnpj'"
-               . "WHERE cpf='$cpf_cnpj'"; 
+               . "WHERE cpf_cnpj='$cpf_cnpj'"; 
        
         $update = mysqli_query($cbd->conecta(),$query2);
        

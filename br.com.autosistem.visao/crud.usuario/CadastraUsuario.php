@@ -3,7 +3,7 @@ include("../../br.com.autosistem.controle/controle.empresa/Usuario.php");
 include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
 $area = $_POST["area"];
 $funcionario = $_POST["funcionario"];
-$login = $_POST["login"];
+$usuario = $_POST["usuario"];
 $senha = $_POST["senha"];
 
 
@@ -12,7 +12,7 @@ $senha = $_POST["senha"];
         
        $cu->setArea($area);
        $cu->setFuncionario($funcionario);
-       $cu->getLogin();
+       $cu->setLogin($usuario);
        $cu->setSenha($senha);
        
        $cubd = new CadastroUsuarioBD();

@@ -3,11 +3,8 @@
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaFisicaBD.php");
 
-$cbd = new ConexaoBD();
-    $sql = "select * from cadastro_funcionario";
-    $resultado = mysqli_query($cbd->conecta(),$sql);
     ?>
-<a href="TelaCadastroClientePessoaFisica.php">Novo Cliente +</a></br></br>
+<a href="TelaCadastroClientePessoaFisica.php">Novo Cliente Pessoa Fisica +</a></br></br>
 
 
     

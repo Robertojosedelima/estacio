@@ -13,26 +13,27 @@
  */
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroUsuarioBD {
-    function inserir($area, $funcionario, $login, $senha){
+    function inserir($area, $funcionario, $usuario, $senha){
         $cbd = new ConexaoBD();
         
-        $query = "INSERT INTO cadastro_usuario (funcionario_fk,area,usuario,senha) VALUES ('$funcionario','$area','$login','$senha')";
+        $query = "INSERT INTO cadastro_usuario (funcionario_fk,area,usuario,senha) VALUES ('$funcionario','$area','$usuario','$senha')";
         $insert = mysqli_query($cbd->conecta(),$query);
         
     if($insert){
         echo "Usuario Cadastrado Com Sucesso!";
+        header('refresh:2, GerenciaCadastroUsuario.php');
     } else {
         echo "erro ao tentar inserir";
+        header('refresh:2, GerenciaCadastroUsuario.php');
     }
     
         
     }
-     function alterar
-   ($area, $funcionario, $login, $senha){
+      function alterar
+   ($codigo,$area, $usuario, $senha){
       $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_usuario SET codigo='$codigo',"
-              . "login='$login',senha='$senha'"
-              . " WHERE codigo='$codigo'";
+      $query = "UPDATE cadastro_usuario SET area='$area',"
+              . "usuario='$usuario',senha='$senha' WHERE codigo='$codigo'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);

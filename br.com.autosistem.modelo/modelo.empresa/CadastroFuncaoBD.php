@@ -22,8 +22,10 @@ class CadastroFuncaoBD {
         
     if($insert){
         echo "Nova Função Cadastrada Com Sucesso!";
+        header('refresh:2, GerenciaCadastroFuncao.php');
     } else {
         echo "erro ao tentar inserir";
+        header('refresh:2, GerenciaCadastroFuncao.php');
     }
     
         

@@ -17,6 +17,7 @@ class Usuario {
     private $funcionario;
     private $login;
     private $senha;
+    private $codigo;
     public function getArea() {
         return $this->area;
     }
@@ -47,6 +48,14 @@ class Usuario {
 
     public function setSenha($senha) {
         $this->senha = $senha;
+    }
+
+    public function getCodigo() {
+        return $this->codigo;
+    }
+
+    public function setCodigo($codigo) {
+        $this->codigo = $codigo;
     }
 
 

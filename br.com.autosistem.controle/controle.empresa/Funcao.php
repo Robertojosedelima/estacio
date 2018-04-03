@@ -17,6 +17,7 @@ class Funcao {
     private $descricao;
     private $carga_horaria_semanal;
     private $salario;
+    private $codigo;
     public function getNome() {
         return $this->nome;
     }
@@ -48,6 +49,14 @@ class Funcao {
     public function setSalario($salario) {
         $this->salario = $salario;
     }
+    public function getCodigo() {
+        return $this->codigo;
+    }
+
+    public function setCodigo($codigo) {
+        $this->codigo = $codigo;
+    }
+
 
 
 }

@@ -5,6 +5,10 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+<?php
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
+
+?>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>CADASTRO DE FUNCIONARIO</title>
@@ -23,15 +27,24 @@ and open the template in the editor.
  <table >
      <tr><td>
      <label for="name">Função:</label>
-     <select name="funcao">
-         <option><?php echo "teamo"; ?></option>
-         
-     </select>
+      <select name ="funcao">
+    <?php
+    $cbd = new ConexaoBD();
+    $sql = "select * from cadastro_funcao";
+    $resultado = mysqli_query($cbd->conecta(),$sql);
+    while ($dados = mysqli_fetch_array($resultado)){
+        $codigo = $dados['codigo'];
+        $nome = $dados['nome'];
+        $descricao = $dados['descricao'];
+        echo"<option value='$codigo'>$nome</option>";
+        
+       }
+   
+    ?>
+   
+</select>
      </td></tr>
-     <tr><td>
-     <label for="name">Codigo da Função:</label>
-     <input type="text" name="codigodafuncao" disabled=""/>
-     </td></tr> 
+     
      <tr><td>
      <label for="name">Nome:</label>
      <input type="text" name="nome" />

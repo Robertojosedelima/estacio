@@ -37,9 +37,11 @@ class CadastroFuncionarioBD {
         if($insert){
         
         echo "Funcionario Cadastrado Com Sucesso!";
+        header('refresh:2, GerenciaCadastroFuncionario.php');
         
     } else {
         echo "erro ao tentar inserir";
+        header('refresh:2, GerenciaCadastroFuncionario.php');
     }
       
     }

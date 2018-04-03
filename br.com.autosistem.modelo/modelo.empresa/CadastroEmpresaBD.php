@@ -36,8 +36,10 @@ class CadastroEmpresaBD {
          
     if($insert){
         echo "Empresa Cadastrada Com Sucesso!";
+        header('refresh:2, GerenciaCadastroEmpresa.php');
     } else {
         echo "erro ao tentar inserir";
+        header('refresh:2, GerenciaCadastroEmpresa.php');
     }
     }
     function alterar
@@ -56,14 +58,14 @@ class CadastroEmpresaBD {
       
        $update = mysqli_query($cbd->conecta(),$query1);
          
-       $query2 = "UPDATE cadastro_empresa SET razao_social='$razao_social',"
+       $query2 = "UPDATE cadastro_empresa_responsavel SET razao_social='$razao_social',"
                . "nome_fantasia='$nome_fantasia',data_parceria='$data_parceria',cpf_cnpj='$cpf_cnpj',"
                . "nit_pis_pasep='$nit_pis_pasep',"
                . "email='$email',email_alternativo='$email_alternativo',"
                . "telefone_residencial='$telefone_residencial',"
                . "ramal='$ramal',telefone_celular01='$telefone_celular01',"
                . "telefone_celular02='$telefone_celular02',fk_endereco='$cpf_cnpj'"
-               . "WHERE cpf='$cpf_cnpj'"; 
+               . "WHERE cpf_cnpj='$cpf_cnpj'"; 
        
         $update = mysqli_query($cbd->conecta(),$query2);
        
@@ -90,7 +92,7 @@ class CadastroEmpresaBD {
       
        $delete = mysqli_query($cbd->conecta(),$query1);
          
-       $query2 = "DELETE FROM cadastro_empresa WHERE cpf_cnpj='$codigo'";
+       $query2 = "DELETE FROM cadastro_empresa_responsavel WHERE cpf_cnpj='$codigo'";
                       
       
        $delete = mysqli_query($cbd->conecta(),$query2);

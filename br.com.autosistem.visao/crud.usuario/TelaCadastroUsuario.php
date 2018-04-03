@@ -6,7 +6,7 @@ and open the template in the editor.
 -->
 <!DOCTYPE html>
 <?php
-require_once '../br.com.autosistem.conexao/ConexaoBD.php';
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -68,7 +68,7 @@ require_once '../br.com.autosistem.conexao/ConexaoBD.php';
      <table>
      <tr><td>
      <label for="name">Login:</label>
-     <input type="text" name="login"/>
+     <input type="text" name="usuario"/>
      </td></tr>   
      <tr><td>
      <label for="name">Senha:</label>
