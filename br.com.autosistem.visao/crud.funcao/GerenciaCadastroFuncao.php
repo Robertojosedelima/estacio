@@ -6,12 +6,10 @@
  * and open the template in the editor.
  */
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
-include("../../br.com.autosistem.modelo/modelo.empresa/CadastroEmpresaBD.php");
 
+?>
 
-    ?>
-
-<a href="TelaCadastroFuncao.php">Nova Funcao +</a></br></br>
+<a href="TelaCadastroFuncao.php" >Nova Funcao +</a></br></br>
 
 
     
@@ -49,3 +47,7 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroEmpresaBD.php");
    echo"</table>";
   
     ?>
+
+
+
+
