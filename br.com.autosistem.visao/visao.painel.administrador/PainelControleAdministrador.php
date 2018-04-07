@@ -4,13 +4,10 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<?php
-require_once '../../br.com.autosistem.visao/crud.funcao/GrenciaCadastroFuncao.php';
 
-?>
 <html>
     <head>
-        <title>menu administrador</title>
+        <title>PAINEL DE CONTROLE ADMINISTRADOR</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
@@ -84,15 +81,16 @@ require_once '../../br.com.autosistem.visao/crud.funcao/GrenciaCadastroFuncao.ph
     <body>
         <nav>
             <div class="item">
-                
+                aqui vai ter a logo da empresa
                 <input type="checkbox" id="check1">
                 <label for="check1">Gerenciamento</label>
                 <ul>
-                    <li><a href="GerenciamentoCadastroFuncionario.php">Funcionario</a></li>
-                    <li><a href="">Funcao</a></li>
-                    <li><a href="">Cliente</a></li>
-                    <li><a href="">Fornecedor</a></li>
-                    
+                    <li><a href="../../br.com.autosistem.visao/crud.funcionario/GerenciaCadastroFuncionario.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Funcionario" id="funcao">Funcionario</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.funcao/GerenciaCadastroFuncao.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Funcao" id="funcao">Função</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.fornecedor/GerenciaCadastroFornecedor.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Fornecedor" id="funcao">Fornecedor</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/GerenciaCadastroClientePessoaFisica.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia cliente pessoa fisica" id="funcao">Cliente Pessoa Fisica</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/GerenciaCadastroClientePessoaJuridica.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia cliente pessoa juridica" id="funcao">Cliente Pessoa Juridica</a></li>
+                   
                 </ul>
                 
             </div>
@@ -113,13 +111,16 @@ require_once '../../br.com.autosistem.visao/crud.funcao/GrenciaCadastroFuncao.ph
                 <input type="checkbox" id="check3">
                 <label for="check3">Configurações</label>
                 <ul>
-                    <li><a href="">Gerenciamento de Usuarios</a></li>
-                    <li><a href="">Gerenciamento de Empresa</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.usuario/GerenciaCadastroUsuario.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Usuario" id="funcao">Gerencia Usuario</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.empresa/GerenciaCadastroEmpresa.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Empresa" id="funcao">Gerencia Empresa</a></li>
                     
                     
                 </ul>
                 
             </div>
         </nav>
+        <?php
+include("../../br.com.autosistem.visao/visao.painel.administrador/GerenciaPainelAdministrador.php");
+?>
     </body>
 </html>
