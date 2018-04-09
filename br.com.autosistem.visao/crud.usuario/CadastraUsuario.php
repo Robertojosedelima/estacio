@@ -6,6 +6,15 @@ $funcionario = $_POST["funcionario"];
 $usuario = $_POST["usuario"];
 $senha = $_POST["senha"];
 
+ if($area=="Administrativo"){
+     $opcao="a";
+ }if($area=="Vendas"){
+     $opcao="v";
+     
+ }if($area=="Operacional"){
+     $opcao="o";
+ }
+
 
 
  $cu = new Usuario();
@@ -16,5 +25,5 @@ $senha = $_POST["senha"];
        $cu->setSenha($senha);
        
        $cubd = new CadastroUsuarioBD();
-        $cubd->inserir($cu->getArea(), $cu->getFuncionario(), $cu->getLogin(), $cu->getSenha());
+        $cubd->inserir($cu->getArea(), $cu->getFuncionario(), $cu->getLogin(), $cu->getSenha(), $opcao);
 ?>

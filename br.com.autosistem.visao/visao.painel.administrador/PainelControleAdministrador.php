@@ -4,6 +4,14 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php  
+session_start();
+if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
+   header('refresh:1,../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php'); 
+}
+
+
+?>
 
 <html>
     <head>
@@ -81,7 +89,8 @@ and open the template in the editor.
     <body>
         <nav>
             <div class="item">
-                aqui vai ter a logo da empresa
+                <a href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
+                <?php echo $_SESSION["nome"]; ?>
                 <input type="checkbox" id="check1">
                 <label for="check1">Gerenciamento</label>
                 <ul>

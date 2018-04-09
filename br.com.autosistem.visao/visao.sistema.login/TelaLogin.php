@@ -21,11 +21,11 @@ and open the template in the editor.
                 </td></tr>        
                 <tr><td>
                 <label for="name">Login:</label>
-                <input type="text" name="login" id="login"/> 
+                <input type="text" name="usuario" /> 
                 </td></tr>
                 <tr><td>
                         <label for="name">Senha</label>        
-                        <input type="password" name="senha" id="senha"/>
+                        <input type="password" name="senha" />
                 </td></tr>
                 <tr><td>
                         <input type="submit" value="Logar" name="Login" />
@@ -34,9 +34,7 @@ and open the template in the editor.
              
             </form>
         
-        
-        
-        
+  
         
         
         
