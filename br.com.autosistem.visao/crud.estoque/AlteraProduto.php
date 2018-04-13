@@ -1,8 +1,27 @@
 <?php
+include("../../br.com.autosistem.controle/controle.estoque/Produto.php");
+include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$fornecedor = $_POST["codigo"];
+$nome = $_POST["nome"];
+$modelo = $_POST["modelo"];
+$descricao = $_POST["descricao"];
+$quantidade = $_POST["quantidade"];
+$valor = $_POST["valor"];
 
+ 
+
+
+
+ $cp = new Produto();
+        
+       $cp->setNome($nome);
+       $cp->setModelo($modelo);
+       $cp->setDescricao($descricao);
+       $cp->setQuantidade($quantidade);
+       $cp->setValor($valor);
+       $cp->setFornecedor($fornecedor);
+       
+       $cpbd = new CadastroProdutoBD();
+        $cpbd->alterar($cp->getFornecedor(), $cp->getNome(), $cp->getModelo(), $cp->getDescricao(), $cp->getQuantidade(), $cp->getValor());
+?>

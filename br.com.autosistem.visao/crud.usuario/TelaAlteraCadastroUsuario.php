@@ -52,7 +52,7 @@ $cbd = new ConexaoBD();
      <table>
      <tr><td>
      <label for="name">Nome:</label>
-    <select name ="funcionario">
+     <select name ="funcionario" disabled="">
     <?php
     $cbd = new ConexaoBD();
     $sql = "select * from cadastro_funcionario WHERE cpf='$funcionario'";
