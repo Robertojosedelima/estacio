@@ -1,6 +1,12 @@
 <?php  
+session_start();
+if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
+   header('refresh:1,../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php'); 
+}
 
- 
+
+include("../../br.com.autosistem.controle/controle.vendas/Pedido.php");
+include("../../br.com.autosistem.modelo/modelo.vendas/CadastroPedidoBD.php");
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 $id = $_POST['id'];
 $cbd = new ConexaoBD();
@@ -17,8 +23,27 @@ if($id==""||$id==null){
       
 }else{
     if($dados['cpf_cnpj']==$id){
+       date_default_timezone_set('America/Sao_Paulo');
        
-       header('refresh:0, ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php');
+       $cpd = new CadastroPedidoBD();
+       
+       $cliente = $id;
+       $vendedor = $_SESSION["codigo"];
+       $data = date('Y-m-d H:i');
+       $modelo_data = date('YmdHi');
+       $status = "aberto";
+       $observacao = "nenhuma";
+       $codigo = $modelo_data.$vendedor.$cliente;
+       echo "$codigo<br>";
+       echo "$cliente<br>";
+       echo "$vendedor<br>";
+       echo "$data<br>";
+       echo "$status<br>";
+       echo "$observacao<br>";
+       
+       //$cpd ->inserir($codigo, $cliente, $vendedor, $data, $status, $observacao);
+       
+       
         
     }else{
     if($dados1['cpf']==$id){

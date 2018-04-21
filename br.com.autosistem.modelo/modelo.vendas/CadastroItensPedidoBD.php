@@ -7,10 +7,10 @@
  */
 
 /**
- * Description of CadastroVendasBD
+ * Description of CadastroItensPedidoBD
  *
  * @author drop-
  */
-class CadastroVendaBD {
+class CadastroItensPedidoBD {
     //put your code here
 }

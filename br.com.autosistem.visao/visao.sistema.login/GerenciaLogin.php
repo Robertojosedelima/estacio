@@ -20,6 +20,7 @@ if($row > 0){
     $email = $dados01['email'];
     // INICIA UMA SESSAO.
     session_start();
+    $_SESSION['codigo']=$dados['codigo'];
     $_SESSION['usuario']=$dados['usuario'];
     $_SESSION['senha']=$dados['senha'];
     $_SESSION['nome']= $nome;
