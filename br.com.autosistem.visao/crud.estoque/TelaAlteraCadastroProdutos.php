@@ -10,7 +10,7 @@ and open the template in the editor.
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 $id= $_GET["id"];
 $cbd = new ConexaoBD();
-    $sql1 = "select * from cadastro_produtos WHERE codigo='$id'";
+    $sql1 = "select * from cadastro_produtos WHERE codigo_produto='$id'";
     $resultado1 = mysqli_query($cbd->conecta(),$sql1);
     $dados = mysqli_fetch_assoc($resultado1);
     $fornecedor = $dados['fornecedor_fk'];
@@ -60,7 +60,7 @@ $cbd = new ConexaoBD();
      <br/>
      <table>
      <tr><td>
-     <input type="hidden" name="codigo" value="<?php echo $dados['codigo']; ?>">
+     <input type="hidden" name="codigo" value="<?php echo $dados['codigo_produto']; ?>">
      </td></tr>
      <tr><td>
      <label for="name">Nome:</label>

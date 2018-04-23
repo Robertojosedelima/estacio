@@ -9,6 +9,20 @@ include("../../br.com.autosistem.controle/controle.vendas/Pedido.php");
 include("../../br.com.autosistem.modelo/modelo.vendas/CadastroPedidoBD.php");
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 $id = $_POST['id'];
+// aqui montei toda estrutura usada para iniciar um pedido.
+date_default_timezone_set('America/Sao_Paulo');
+       
+       $cpd = new CadastroPedidoBD();
+       
+       $cliente = $id;
+       $vendedor = $_SESSION["codigo"];
+       $data = date('Y-m-d H:i');
+       $hora = date('Y-m-d H:i');
+       $modelo_data = date('YmdHi');
+       $status = "aberto";
+       $observacao = "nenhuma";
+       $codigo = $modelo_data.$vendedor.$cliente;
+       
 $cbd = new ConexaoBD();
     $sql = "select * from cadastro_cliente_pessoa_juridica WHERE cpf_cnpj='$id'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
@@ -23,32 +37,15 @@ if($id==""||$id==null){
       
 }else{
     if($dados['cpf_cnpj']==$id){
-       date_default_timezone_set('America/Sao_Paulo');
        
-       $cpd = new CadastroPedidoBD();
-       
-       $cliente = $id;
-       $vendedor = $_SESSION["codigo"];
-       $data = date('Y-m-d H:i');
-       $modelo_data = date('YmdHi');
-       $status = "aberto";
-       $observacao = "nenhuma";
-       $codigo = $modelo_data.$vendedor.$cliente;
-       echo "$codigo<br>";
-       echo "$cliente<br>";
-       echo "$vendedor<br>";
-       echo "$data<br>";
-       echo "$status<br>";
-       echo "$observacao<br>";
-       
-       //$cpd ->inserir($codigo, $cliente, $vendedor, $data, $status, $observacao);
+       $cpd ->inserir($codigo, $cliente, $vendedor, $data, $hora, $status, $observacao);
        
        
         
     }else{
     if($dados1['cpf']==$id){
+        $cpd ->inserir($codigo, $cliente, $vendedor, $data, $hora, $status, $observacao);
         
-        header('refresh:0, ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php');
         
         
     }else{

@@ -33,7 +33,7 @@ class CadastroUsuarioBD {
    ($codigo,$area, $usuario, $senha){
       $cbd = new ConexaoBD();
       $query = "UPDATE cadastro_usuario SET area='$area',"
-              . "usuario='$usuario',senha='$senha' WHERE codigo='$codigo'";
+              . "usuario='$usuario',senha='$senha' WHERE codigo_usuario='$codigo'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);
@@ -55,7 +55,7 @@ class CadastroUsuarioBD {
     function excluir
     ($codigo){
       $cbd = new ConexaoBD();
-       $query = "DELETE FROM cadastro_usuario WHERE codigo='$codigo'";
+       $query = "DELETE FROM cadastro_usuario WHERE codigo_usuario='$codigo'";
                       
       
        $delete = mysqli_query($cbd->conecta(),$query);

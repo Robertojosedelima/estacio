@@ -29,7 +29,7 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
     $sql = "select * from cadastro_usuario";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['codigo'];
+        $codigo = $dados['codigo_usuario'];
         $usuario = $dados['usuario'];
         $area = $dados['area'];
 

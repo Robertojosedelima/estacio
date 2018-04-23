@@ -26,7 +26,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $sql = "select * from cadastro_funcao";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['codigo'];
+        $codigo = $dados['codigo_funcao'];
         $nome = $dados['nome'];
 
        echo"<tr>";

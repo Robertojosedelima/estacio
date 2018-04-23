@@ -32,7 +32,7 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
     $sql = "select * from cadastro_produtos";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['codigo'];
+        $codigo = $dados['codigo_produto'];
         $nome = $dados['nome'];
         $modelo = $dados['modelo'];
         $descricao = $dados['descricao'];

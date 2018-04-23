@@ -20,7 +20,7 @@ if($row > 0){
     $email = $dados01['email'];
     // INICIA UMA SESSAO.
     session_start();
-    $_SESSION['codigo']=$dados['codigo'];
+    $_SESSION['codigo']=$dados['codigo_usuario'];
     $_SESSION['usuario']=$dados['usuario'];
     $_SESSION['senha']=$dados['senha'];
     $_SESSION['nome']= $nome;
@@ -32,12 +32,12 @@ if($row > 0){
     echo " SEJA BEM VINDO ADMINISTRADOR";
     header('refresh:2,../../br.com.autosistem.visao/visao.painel.administrador/PainelControleAdministrador.php');
     }
-    if($dados['opcao']=='v'){
+    if($dados['area']=='Vendas'){
     echo " SEJA BEM VINDO VENDEDOR";
     header('refresh:2,../../br.com.autosistem.visao/visao.painel.vendas/PainelControleVendas.php');    
     }
     
-     if($dados['opcao']=='o'){
+     if($dados['area']=='Operacional'){
     echo " SEJA BEM VINDO OPERACIONAL";
     header('refresh:0,../../br.com.autosistem.visao/visao.painel.operacional/PainelControleOperacional.php');    
     }

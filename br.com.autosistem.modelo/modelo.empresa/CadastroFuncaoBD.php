@@ -34,9 +34,9 @@ class CadastroFuncaoBD {
      function alterar
    ($codigo,$nome, $descricao, $carga_horaria_semanal, $salario){
       $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_funcao SET codigo='$codigo',"
+      $query = "UPDATE cadastro_funcao SET codigo_funcao='$codigo',"
               . "nome='$nome',descricao='$descricao',"
-              . "carga_horaria_semanal='$carga_horaria_semanal',salario='$salario' WHERE codigo='$codigo'";
+              . "carga_horaria_semanal='$carga_horaria_semanal',salario='$salario' WHERE codigo_funcao='$codigo'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);
@@ -58,7 +58,7 @@ class CadastroFuncaoBD {
     function excluir
     ($codigo){
       $cbd = new ConexaoBD();
-       $query = "DELETE FROM cadastro_funcao WHERE codigo='$codigo'";
+       $query = "DELETE FROM cadastro_funcao WHERE codigo_funcao='$codigo'";
                       
       
        $delete = mysqli_query($cbd->conecta(),$query);

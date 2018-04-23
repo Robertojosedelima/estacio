@@ -32,8 +32,8 @@ class CadastroProdutoBD {
       function alterar
    ($fornecedor, $nome, $modelo, $descricao, $quantidade,$valor){
       $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_produtos SET codigo='$fornecedor',"
-              . "nome='$nome',modelo='$modelo',descricao='$descricao',quantidade='$quantidade',valor='$valor' WHERE codigo='$fornecedor'";
+      $query = "UPDATE cadastro_produtos SET codigo_produto='$fornecedor',"
+              . "nome='$nome',modelo='$modelo',descricao='$descricao',quantidade='$quantidade',valor='$valor' WHERE codigo_produto='$fornecedor'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);
@@ -55,7 +55,7 @@ class CadastroProdutoBD {
     function excluir
     ($codigo){
       $cbd = new ConexaoBD();
-       $query = "DELETE FROM cadastro_produtos WHERE codigo='$codigo'";
+       $query = "DELETE FROM cadastro_produtos WHERE codigo_produto='$codigo'";
                       
       
        $delete = mysqli_query($cbd->conecta(),$query);

@@ -13,15 +13,17 @@
  */
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroPedidoBD {
-    function inserir($codigo, $cliente, $vendedor, $data, $status, $observacao){
+    function inserir($codigo, $cliente, $vendedor, $data, $hora, $status, $observacao){
         $cbd = new ConexaoBD();
         
-        $query = "INSERT INTO cadastro_usuario (funcionario_fk,area,usuario,senha) VALUES ('$funcionario','$area','$usuario','$senha')";
+        $query = "INSERT INTO pedido (codigo_pedido,cliente_fk,vendedor_fk,data,hora,status,observacao) VALUES ('$codigo','$cliente','$vendedor','$data','$hora','$status','$observacao')";
         $insert = mysqli_query($cbd->conecta(),$query);
         
     if($insert){
         echo "Iniciando Novo Pedido!";
-        header('refresh:2, ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php');
+        
+        header ("Location: ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=$codigo");
+    
     } else {
         echo "erro ao tentar inserir";
         header('refresh:2, ../../br.com.autosistem.visao/crud.pedidos/TelaCadastroPedido.php');
