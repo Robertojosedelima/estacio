@@ -41,7 +41,7 @@ class CadastroUsuarioBD {
         if($update){
         
         echo "Usuario Alterado Com Sucesso!";
-        header('refresh:2, GerenciaCadastroUsuario.php');
+        header('refresh:1, GerenciaCadastroUsuario.php');
         
     } else {
         echo "erro ao tentar alterar";
