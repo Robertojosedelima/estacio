@@ -41,3 +41,107 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
  </table>
 </fieldset>
+ <body>
+         
+ <form name = "cadastro-novo-pedido" action="CadastraUsuario.php" method="post">
+     <fieldset>
+     <legend>ESCOLHA OS ITENS DO PEDIDO </legend>
+     <br/>
+     <table>
+     <tr><td>
+    <select name ="funcionario">
+    <?php
+    $cbd = new ConexaoBD();
+    $sql3 = "select * from cadastro_produtos";
+           
+    $resultado3 = mysqli_query($cbd->conecta(),$sql3);
+    while ($dados3 = mysqli_fetch_array($resultado3)){
+        $codigo_produto = $dados3['codigo_produto'];
+        $nome_produto = $dados3['nome'];
+        $modelo_produto = $dados3['modelo'];
+        $descricao_produto = $dados3['descricao'];
+        $quantidade_produto = $dados3['quantidade'];
+        $valor_produto = $dados3['valor'];
+        $fornecedor = $dados3['fornecedor_fk'];
+        echo"<option value='$codigo_produto'>Cod: $codigo_produto - $nome_produto - Modelo: $modelo_produto - Valor: $valor_produto</option>";
+        
+       }
+  
+    ?>
+   
+</select>
+     
+     <input type="number" name="qtd" value="1" style="width:60px">
+        <button type="submit">Adicionar</button>
+         
+     </td></tr>
+    </table>
+     
+     
+ </fieldset>
+ </form>
+ <fieldset>
+ <legend>ITENS ESCOLHIDOS</legend>
+       <?php
+   echo"<table border=1>";
+   echo"<th>Codigo</th>";
+   echo"<th>Nome</th>";
+   echo"<th>Modelo</th>";
+    echo"<th>Descricao</th>";
+   echo"<th>Quantidade</th>";
+   echo"<th>Valor Unitario</th>";
+   echo"<th>Valor Total</th>";
+   
+   
+  
+    
+    $cbd = new ConexaoBD();
+    $sql4 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "inner join cadastro_produtos cp on (ip.produto_fk = cp.codigo_produto)"
+            . "WHERE ip.pedido_fk='$pedido'";
+    $resultado4 = mysqli_query($cbd->conecta(),$sql4);
+    while ($dados4 = mysqli_fetch_array($resultado4)){
+        $codigo = $dados4['codigo_produto'];
+        $nome = $dados4['nome'];
+        $modelo = $dados4['modelo'];
+        $descricao = $dados4['descricao'];
+        $quantidade = $dados4['quantidade_escolhida'];
+        $valor_unitario = $dados4['valor'];
+        $valor_total = $dados4['total'];
+
+       echo"<tr>";
+       echo"<td>";
+       echo"$codigo";
+       echo"</td>";
+       echo"<td>";
+       echo"$nome";
+       echo"</td>";
+       echo"<td>";
+       echo"$modelo";
+       echo"</td>";
+       echo"<td>";
+       echo"$descricao";
+       echo"</td>";
+       echo"<td>";
+       echo"$quantidade";
+       echo"</td>";
+       echo"<td>";
+       echo"$valor_unitario";
+       echo"</td>";
+       echo"<td>";
+       echo"$valor_total";
+       echo"</td>";
+       echo"<td>";
+       echo"<a href='TelaAlteraCadastroProdutos.php?id=".$codigo."'>Alterar</a>";
+       echo"</td>";
+       echo"<td>";
+       echo"<a href='DeletaProduto.php?id=".$codigo."'>Deletar</a>";
+       echo"</td>";
+       echo"</tr>";
+       }
+   echo"</table>";
+ 
+    ?>
+ </fieldset>
+ </body>
