@@ -12,41 +12,43 @@
  * @author drop-
  */
 class CadastroItensPedido {
-    private $pedido;
+    private $pedido_fk;
     private $produto_fk;
-    private $quantidade;
-    private $valor;
-    public function getPedido() {
-        return $this->pedido;
+    private $quantidade_escolhida;
+    private $total;
+    public function getPedido_fk() {
+        return $this->pedido_fk;
     }
 
     public function getProduto_fk() {
         return $this->produto_fk;
     }
 
-    public function getQuantidade() {
-        return $this->quantidade;
+    public function getQuantidade_escolhida() {
+        return $this->quantidade_escolhida;
     }
 
-    public function getValor() {
-        return $this->valor;
+    public function getTotal() {
+        return $this->total;
     }
 
-    public function setPedido($pedido) {
-        $this->pedido = $pedido;
+    public function setPedido_fk($pedido_fk) {
+        $this->pedido_fk = $pedido_fk;
     }
 
     public function setProduto_fk($produto_fk) {
         $this->produto_fk = $produto_fk;
     }
 
-    public function setQuantidade($quantidade) {
-        $this->quantidade = $quantidade;
+    public function setQuantidade_escolhida($quantidade_escolhida) {
+        $this->quantidade_escolhida = $quantidade_escolhida;
     }
 
-    public function setValor($valor) {
-        $this->valor = $valor;
+    public function setTotal($total) {
+        $this->total = $total;
     }
+
+
 
 
 }

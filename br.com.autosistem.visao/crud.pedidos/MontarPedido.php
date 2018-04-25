@@ -43,13 +43,13 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 </fieldset>
  <body>
          
- <form name = "cadastro-novo-pedido" action="CadastraUsuario.php" method="post">
+ <form name = "cadastro-novo-pedido" action="ItemPedido.php" method="post">
      <fieldset>
      <legend>ESCOLHA OS ITENS DO PEDIDO </legend>
      <br/>
      <table>
      <tr><td>
-    <select name ="funcionario">
+    <select name ="produto">
     <?php
     $cbd = new ConexaoBD();
     $sql3 = "select * from cadastro_produtos";
@@ -71,7 +71,9 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
    
 </select>
      
-     <input type="number" name="qtd" value="1" style="width:60px">
+     <input type="number" name="quantidade" value="1" style="width:60px">
+     <input type="hidden" name="pedido" value="<?php echo $pedido; ?>" />
+     
         <button type="submit">Adicionar</button>
          
      </td></tr>
@@ -83,17 +85,19 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  <fieldset>
  <legend>ITENS ESCOLHIDOS</legend>
        <?php
+       
    echo"<table border=1>";
    echo"<th>Codigo</th>";
    echo"<th>Nome</th>";
    echo"<th>Modelo</th>";
-    echo"<th>Descricao</th>";
+   echo"<th>Descricao</th>";
    echo"<th>Quantidade</th>";
    echo"<th>Valor Unitario</th>";
-   echo"<th>Valor Total</th>";
+   echo"<th>Sub-Total</th>";
    
    
-  
+   
+  $total=0;
     
     $cbd = new ConexaoBD();
     $sql4 = "select * from item_pedido ip "
@@ -108,7 +112,10 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
         $descricao = $dados4['descricao'];
         $quantidade = $dados4['quantidade_escolhida'];
         $valor_unitario = $dados4['valor'];
-        $valor_total = $dados4['total'];
+        $sub_total = $dados4['total'];
+        $codigo_item_pedido = $dados4['codigo_item_pedido'];
+        
+        $total = $sub_total+$total;
 
        echo"<tr>";
        echo"<td>";
@@ -130,18 +137,24 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
        echo"$valor_unitario";
        echo"</td>";
        echo"<td>";
-       echo"$valor_total";
+       echo"$sub_total";
        echo"</td>";
        echo"<td>";
-       echo"<a href='TelaAlteraCadastroProdutos.php?id=".$codigo."'>Alterar</a>";
-       echo"</td>";
-       echo"<td>";
-       echo"<a href='DeletaProduto.php?id=".$codigo."'>Deletar</a>";
+       echo"<a href='DeletaItem.php?id=".$codigo_item_pedido."&pedido=".$pedido."'>Deletar</a>'";
+      
        echo"</td>";
        echo"</tr>";
        }
+      
+       
    echo"</table>";
- 
+   echo"<table align='right'border=1>";
+   echo"<th>Total R$</th>";
+       echo"<td>";
+       echo"$total";
+       echo"</td>";
+       echo"</table>";
+   
     ?>
  </fieldset>
  </body>
