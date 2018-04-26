@@ -140,8 +140,8 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
        echo"$sub_total";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaItem.php?id=".$codigo_item_pedido."&pedido=".$pedido."'>Deletar</a>'";
-      
+       echo"<a href='DeletaItem.php?id=".$codigo_item_pedido."&pedido=".$pedido."'>Deletar</a>";
+       
        echo"</td>";
        echo"</tr>";
        }

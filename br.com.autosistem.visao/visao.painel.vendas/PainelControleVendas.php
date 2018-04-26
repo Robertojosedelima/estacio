@@ -96,7 +96,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                 <label for="check1">Gerenciamento</label>
                 <ul>
                     <li><a href="../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Orçamento" id="funcao">Orçamento</a></li>
-                    <li><a href="../../br.com.autosistem.visao/crud.pedidos/TelaCadastroPedido.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Pedido" id="funcao">Pedido</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.pedidos/GerenciaCadastroPedido.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Pedido" id="funcao">Pedido</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Vendas" id="funcao">Vendas</a></li>
                     
                    

@@ -32,43 +32,19 @@ class CadastroItensPedidoBD {
     
         
     }
-      function alterar
-   ($codigo,$area, $usuario, $senha){
-      $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_usuario SET area='$area',"
-              . "usuario='$usuario',senha='$senha' WHERE codigo='$codigo'";
-                      
+    function excluir($id,$pedido_fk){
       
-       $update = mysqli_query($cbd->conecta(),$query);
-   
-        if($update){
-        
-        echo "Usuario Alterado Com Sucesso!";
-        header('refresh:2, GerenciaCadastroUsuario.php');
-        
-    } else {
-        echo "erro ao tentar alterar";
-        header('refresh:2, GerenciaCadastroUsuario.php');
-    }
-        
-        
-    
-        
-    }
-    function excluir
-    ($pedido_fk){
       $cbd = new ConexaoBD();
-       $query = "DELETE FROM item_pedido WHERE codigo='$pedido_fk'";
-                      
-      
-       $delete = mysqli_query($cbd->conecta(),$query);
+      $query = "DELETE FROM item_pedido WHERE codigo_item_pedido='$id'";
+      $delete = mysqli_query($cbd->conecta(),$query);
         
         if($delete){
+            
+        echo "sucesso";
         
-        echo "Usuario Excluido Com Sucesso!";
         header ("Location: ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=$pedido_fk");
         
-    } else {
+    }   else {
         echo "erro ao tentar excluir";
         header ("Location: ../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=$pedido_fk");
    
