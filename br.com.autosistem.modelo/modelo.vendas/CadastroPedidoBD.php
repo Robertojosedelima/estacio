@@ -31,22 +31,23 @@ class CadastroPedidoBD {
     
     }
       function alterar
-   ($codigo,$area, $usuario, $senha){
+   ($codigo_pedido, $pagamento, $status, $observacao){
       $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_usuario SET area='$area',"
-              . "usuario='$usuario',senha='$senha' WHERE codigo='$codigo'";
+      $query = "UPDATE pedido SET codigo_pedido='$codigo_pedido',"
+              . "status='$status',observacao='$observacao',pagamento='$pagamento' "
+              . "WHERE codigo_pedido='$codigo_pedido'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);
    
         if($update){
         
-        echo "Usuario Alterado Com Sucesso!";
-        header('refresh:2, GerenciaCadastroUsuario.php');
+        echo "Pedido Finalizado Com Sucesso!";
+        header('refresh:2, TelaCadastroPedido.php');
         
     } else {
         echo "erro ao tentar alterar";
-        header('refresh:2, GerenciaCadastroUsuario.php');
+        header('refresh:2, TelaCadastroPedido.php');
     }
      
     }

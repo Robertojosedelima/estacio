@@ -18,7 +18,17 @@ class Pedido {
     private $data;
     private $status;
     private $observacao;
-    public function getCodigo() {
+    private $pagamento;
+    
+    public function getPagamento() {
+        return $this->pagamento;
+    }
+
+    public function setPagamento($pagamento) {
+        $this->pagamento = $pagamento;
+    }
+
+        public function getCodigo() {
         return $this->codigo;
     }
 

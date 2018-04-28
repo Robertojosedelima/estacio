@@ -157,4 +157,26 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
    
     ?>
  </fieldset>
+     <form name = "finalizar-novo-pedido" action="FinalizarPedido.php" method="post">
+     <fieldset>
+     <legend>ESCOLHA A FORMA DE PAGAMENTO </legend>
+     <br/>
+     <table>
+     <tr><td>
+     <select name="pagamento">
+     <option value="Dinheiro">Dinheiro</option> 
+     <option value="Cartao de credito" selected>Cartao de credito</option>
+     <option value="Cartao de debito">Cartao de debito</option>
+     </select>
+     
+     <input type="hidden" name="pedido" value="<?php echo $pedido; ?>" />
+     <input type="text" name="observacao" value="aqui vai a observação"/>
+     <button type="submit">Finalizar Pedido</button>
+         
+     </td></tr>
+    </table>
+     
+     
+ </fieldset>
+ </form>
  </body>
