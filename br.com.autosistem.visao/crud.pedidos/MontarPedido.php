@@ -40,7 +40,9 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
+  
 </fieldset>
+
  <body>
          
  <form name = "cadastro-novo-pedido" action="ItemPedido.php" method="post">
@@ -73,6 +75,8 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      
      <input type="number" name="quantidade" value="1" style="width:60px">
      <input type="hidden" name="pedido" value="<?php echo $pedido; ?>" />
+     <input type="hidden" name="quantidade_produto" value="<?php echo $quantidade_produto; ?>" />
+     
      
         <button type="submit">Adicionar</button>
          
@@ -172,11 +176,14 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <input type="hidden" name="pedido" value="<?php echo $pedido; ?>" />
      <input type="text" name="observacao" value="aqui vai a observação"/>
      <button type="submit">Finalizar Pedido</button>
+     
          
      </td></tr>
     </table>
      
      
+     
  </fieldset>
  </form>
+     <a href='GerenciaCadastroPedido.php'>Retornar Para Pedidos</a>
  </body>

@@ -6,6 +6,8 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  $produto_fk = $_POST['produto'];
  $pedido_fk = $_POST['pedido'];
  $quantidade_escolhida = $_POST['quantidade'];
+ $quantidade_produto = $_POST['quantidade_produto'];
+ 
 
  
  $cbd = new ConexaoBD();
