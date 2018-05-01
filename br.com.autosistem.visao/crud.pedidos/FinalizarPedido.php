@@ -12,10 +12,6 @@ $observacao = $_POST['observacao'];
 $pagamento = $_POST['pagamento'];
 $status = "fechado";
 
-echo $codigo_pedido;
-echo $observacao;
-echo $pagamento;
-echo $status;
 
 $cpbd = new CadastroPedidoBD();
 $cpbd->alterar($codigo_pedido, $pagamento, $status, $observacao);

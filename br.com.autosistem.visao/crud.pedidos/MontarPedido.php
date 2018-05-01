@@ -54,18 +54,21 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     <select name ="produto">
     <?php
     $cbd = new ConexaoBD();
-    $sql3 = "select * from cadastro_produtos";
-           
+    $sql3 = "select * from cadastro_fornecimento f "
+            . "inner join cadastro_fornecedor cf on (cf.cpf_cnpj = f.fornecedor_fk)"
+            . "inner join cadastro_produtos cp on (cp.codigo_produto = f.produto_fk)";
+    $resultado3 = mysqli_query($cbd->conecta(),$sql3);
+    $dados3 = mysqli_fetch_assoc($resultado3);
     $resultado3 = mysqli_query($cbd->conecta(),$sql3);
     while ($dados3 = mysqli_fetch_array($resultado3)){
-        $codigo_produto = $dados3['codigo_produto'];
+        $codigo_fornecimento = $dados3['codigo_fornecimento'];
         $nome_produto = $dados3['nome'];
         $modelo_produto = $dados3['modelo'];
         $descricao_produto = $dados3['descricao'];
         $quantidade_produto = $dados3['quantidade'];
         $valor_produto = $dados3['valor'];
         $fornecedor = $dados3['fornecedor_fk'];
-        echo"<option value='$codigo_produto'>Cod: $codigo_produto - $nome_produto - Modelo: $modelo_produto - Valor: $valor_produto</option>";
+        echo"<option value='$codigo_fornecimento'>Cod: $codigo_fornecimento - $nome_produto / $descricao_produto - Modelo: $modelo_produto - Valor: $valor_produto</option>";
         
        }
   
@@ -106,11 +109,12 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $cbd = new ConexaoBD();
     $sql4 = "select * from item_pedido ip "
             . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
-            . "inner join cadastro_produtos cp on (ip.produto_fk = cp.codigo_produto)"
+            . "inner join cadastro_fornecimento cf on (ip.produto_fk = cf.codigo_fornecimento)"
+            . "inner join cadastro_produtos cp on (cf.produto_fk = cp.codigo_produto)"
             . "WHERE ip.pedido_fk='$pedido'";
     $resultado4 = mysqli_query($cbd->conecta(),$sql4);
     while ($dados4 = mysqli_fetch_array($resultado4)){
-        $codigo = $dados4['codigo_produto'];
+        $codigo = $dados4['codigo_fornecimento'];
         $nome = $dados4['nome'];
         $modelo = $dados4['modelo'];
         $descricao = $dados4['descricao'];

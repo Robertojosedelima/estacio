@@ -13,10 +13,10 @@
  */
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroProdutoBD {
-    function inserir($fornecedor, $nome, $modelo, $descricao, $quantidade,$valor){
+    function inserir($nome, $descricao){
         $cbd = new ConexaoBD();
         
-        $query = "INSERT INTO cadastro_produtos (fornecedor_fk,nome,modelo,descricao,quantidade,valor) VALUES ('$fornecedor','$nome','$modelo','$descricao','$quantidade','$valor')";
+        $query = "INSERT INTO cadastro_produtos (nome,descricao) VALUES ('$nome','$descricao')";
         $insert = mysqli_query($cbd->conecta(),$query);
         
     if($insert){
@@ -30,10 +30,10 @@ class CadastroProdutoBD {
         
     }
       function alterar
-   ($fornecedor, $nome, $modelo, $descricao, $quantidade,$valor){
+   ($codigo, $nome, $descricao){
       $cbd = new ConexaoBD();
-      $query = "UPDATE cadastro_produtos SET codigo_produto='$fornecedor',"
-              . "nome='$nome',modelo='$modelo',descricao='$descricao',quantidade='$quantidade',valor='$valor' WHERE codigo_produto='$fornecedor'";
+      $query = "UPDATE cadastro_produtos SET codigo_produto='$codigo',"
+              . "nome='$nome',descricao='$descricao' WHERE codigo_produto='$codigo'";
                       
       
        $update = mysqli_query($cbd->conecta(),$query);

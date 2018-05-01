@@ -11,7 +11,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
  
  $cbd = new ConexaoBD();
- $sql = "select * from cadastro_produtos WHERE codigo_produto='$produto_fk'";
+ $sql = "select * from cadastro_fornecimento WHERE codigo_fornecimento='$produto_fk'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     $dados = mysqli_fetch_assoc($resultado);
     $valor_produto = $dados['valor'];

@@ -15,9 +15,20 @@ class Produto {
     private $nome;
     private $modelo;
     private $descricao;
-    private $quantidade;
-    private $valor;
-    private $fornecedor;
+    private $codigo;
+    
+    
+
+    public function getCodigo() {
+        return $this->codigo;
+    }
+
+    public function setCodigo($codigo) {
+        $this->codigo = $codigo;
+    }
+
+    
+    
     public function getNome() {
         return $this->nome;
     }
@@ -30,17 +41,7 @@ class Produto {
         return $this->descricao;
     }
 
-    public function getQuantidade() {
-        return $this->quantidade;
-    }
-
-    public function getValor() {
-        return $this->valor;
-    }
-
-    public function getFornecedor() {
-        return $this->fornecedor;
-    }
+ 
 
     public function setNome($nome) {
         $this->nome = $nome;
@@ -54,17 +55,6 @@ class Produto {
         $this->descricao = $descricao;
     }
 
-    public function setQuantidade($quantidade) {
-        $this->quantidade = $quantidade;
-    }
-
-    public function setValor($valor) {
-        $this->valor = $valor;
-    }
-
-    public function setFornecedor($fornecedor) {
-        $this->fornecedor = $fornecedor;
-    }
 
 
 }

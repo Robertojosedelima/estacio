@@ -21,10 +21,8 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
    echo"<table border=1>";
    echo"<th>Codigo</th>";
    echo"<th>Nome</th>";
-   echo"<th>Modelo</th>";
    echo"<th>Descricao</th>";
-   echo"<th>Quantidade</th>";
-   echo"<th>Valor Unitario</th>";
+   
    
   
     
@@ -34,10 +32,8 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
     while ($dados = mysqli_fetch_array($resultado)){
         $codigo = $dados['codigo_produto'];
         $nome = $dados['nome'];
-        $modelo = $dados['modelo'];
         $descricao = $dados['descricao'];
-        $quantidade = $dados['quantidade'];
-        $valor = $dados['valor'];
+       
 
        echo"<tr>";
        echo"<td>";
@@ -47,16 +43,7 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
        echo"$nome";
        echo"</td>";
        echo"<td>";
-       echo"$modelo";
-       echo"</td>";
-       echo"<td>";
        echo"$descricao";
-       echo"</td>";
-       echo"<td>";
-       echo"$quantidade";
-       echo"</td>";
-       echo"<td>";
-       echo"$valor";
        echo"</td>";
        echo"<td>";
        echo"<a href='TelaAlteraCadastroProdutos.php?id=".$codigo."'>Alterar</a>";

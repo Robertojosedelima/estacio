@@ -123,7 +123,8 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                 <ul>
                     <li><a href="../../br.com.autosistem.visao/crud.usuario/GerenciaCadastroUsuario.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Usuario" id="funcao">Gerencia Usuario</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.empresa/GerenciaCadastroEmpresa.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Empresa" id="funcao">Gerencia Empresa</a></li>
-                    <li><a href="../../br.com.autosistem.visao/crud.estoque/GerenciaEstoque.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Estoque" id="funcao">Estoque</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.estoque/GerenciaEstoque.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Estoque" id="funcao">Produto</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.fornecimento/GerenciaFornecimento.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Fornecimento" id="funcao">Fornecimento</a></li>
                     
                 </ul>
                 

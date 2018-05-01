@@ -21,33 +21,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
             
  <!-- DADOS USUARIO-->
 
- <fieldset>
-     <legend>Fabricante</legend>
-     <br/>
-     <table>
-     <tr><td>
-     <label for="name">Selecione o Fabricante:</label>
-     <select name ="fornecedor">
-    <?php
-    $cbd = new ConexaoBD();
-    $sql = "select * from cadastro_fornecedor";
-    $resultado = mysqli_query($cbd->conecta(),$sql);
-    while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['cpf_cnpj'];
-        $razao_social = $dados['razao_social'];
-        $nome_fantasia = $dados['nome_fantasia'];
-        echo"<option value='$codigo'>$nome_fantasia </option>";
-        
-       }
-   
-    ?>
-   
-</select>
-     </td></tr>
-    </table>
-     
-     
- </fieldset>
+ 
  <fieldset>
      <legend>Dados do item</legend>
      <br/>
@@ -57,21 +31,10 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <input type="text" name="nome"/>
      </td></tr>   
      <tr><td>
-     <label for="name">Modelo:</label>
-     <input type="text" name="modelo"/>
-     </td></tr>   
-     <tr><td>
      <label for="name">Descrição:</label>
      <input type="text" name="descricao"/>
      </td></tr>   
-     <tr><td>
-     <label for="name">Quantidade:</label>
-     <input type="text" name="quantidade"/>
-     </td></tr>   
-      <tr><td>
-     <label for="name">Valor:</label>
-     <input type="text" name="valor"/>
-     </td></tr>   
+     
      
    
      </table>

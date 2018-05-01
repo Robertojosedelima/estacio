@@ -2,12 +2,10 @@
 include("../../br.com.autosistem.controle/controle.estoque/Produto.php");
 include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
 
-$fornecedor = $_POST["codigo"];
+$codigo_produto = $_POST["codigo"];
 $nome = $_POST["nome"];
-$modelo = $_POST["modelo"];
 $descricao = $_POST["descricao"];
-$quantidade = $_POST["quantidade"];
-$valor = $_POST["valor"];
+
 
  
 
@@ -16,12 +14,9 @@ $valor = $_POST["valor"];
  $cp = new Produto();
         
        $cp->setNome($nome);
-       $cp->setModelo($modelo);
        $cp->setDescricao($descricao);
-       $cp->setQuantidade($quantidade);
-       $cp->setValor($valor);
-       $cp->setFornecedor($fornecedor);
+       $cp->setCodigo($codigo_produto);
        
        $cpbd = new CadastroProdutoBD();
-        $cpbd->alterar($cp->getFornecedor(), $cp->getNome(), $cp->getModelo(), $cp->getDescricao(), $cp->getQuantidade(), $cp->getValor());
+        $cpbd->alterar($cp->getCodigo(), $cp->getNome(), $cp->getDescricao());
 ?>

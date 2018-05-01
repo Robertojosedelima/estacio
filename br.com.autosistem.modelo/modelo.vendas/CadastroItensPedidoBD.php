@@ -16,7 +16,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 class CadastroItensPedidoBD {
     function inserir($pedido_fk, $produto_fk, $quantidade_escolhida, $total){
     $cbd = new ConexaoBD();
-    $sql = "select * from cadastro_produtos WHERE codigo_produto='$produto_fk'";
+    $sql = "select * from cadastro_fornecimento WHERE codigo_fornecimento='$produto_fk'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     $dados = mysqli_fetch_assoc($resultado);
     $quantidade_produto = $dados['quantidade'];
@@ -26,9 +26,9 @@ class CadastroItensPedidoBD {
         if($quantidade_escolhida<=$quantidade_produto){
         $insert = mysqli_query($cbd->conecta(),$query);
         if($insert){
-           $query1 = "UPDATE cadastro_produtos SET codigo_produto='$produto_fk',"
+           $query1 = "UPDATE cadastro_fornecimento SET codigo_fornecimento='$produto_fk',"
               . "quantidade='$nova_quantidade' "
-              . "WHERE codigo_produto='$produto_fk'";
+              . "WHERE codigo_fornecimento='$produto_fk'";
        
        $update = mysqli_query($cbd->conecta(),$query1);
    
@@ -50,7 +50,7 @@ class CadastroItensPedidoBD {
     }
     function excluir($id,$pedido_fk,$quantidade_escolhida,$produto_fk){
     $cbd = new ConexaoBD();
-    $sql = "select * from cadastro_produtos WHERE codigo_produto='$produto_fk'";
+    $sql = "select * from cadastro_fornecimento WHERE codigo_fornecimento='$produto_fk'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     $dados = mysqli_fetch_assoc($resultado);
     $quantidade_produto = $dados['quantidade'];
@@ -60,9 +60,9 @@ class CadastroItensPedidoBD {
       $delete = mysqli_query($cbd->conecta(),$query);
       
         if($delete){
-        $query1 = "UPDATE cadastro_produtos SET codigo_produto='$produto_fk',"
+        $query1 = "UPDATE cadastro_fornecimento SET codigo_fornecimento='$produto_fk',"
               . "quantidade='$nova_quantidade' "
-              . "WHERE codigo_produto='$produto_fk'";
+              . "WHERE codigo_fornecimento='$produto_fk'";
        
        $update = mysqli_query($cbd->conecta(),$query1);
             
