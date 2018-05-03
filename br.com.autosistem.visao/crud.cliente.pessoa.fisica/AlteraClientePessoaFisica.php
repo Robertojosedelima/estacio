@@ -1,5 +1,5 @@
 <?php
-include("../../br.com.autosistem.controle/controle.empresa/PessoaFisica.php");
+include("../../br.com.autosistem.controle/controle.empresa/ClientePessoaFisica.php");
 include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaFisicaBD.php");
 
 $nome = $_POST["nome"];
@@ -26,7 +26,7 @@ $referencia = $_POST["referencia"];
 $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
-$pf = new PessoaFisica();
+$pf = new ClientePessoaFisica();
 $ccpfbd = new CadastroClientePessoaFisicaBD();
 
 $pf->setNome($nome);

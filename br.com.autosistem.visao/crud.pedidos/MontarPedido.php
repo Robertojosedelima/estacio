@@ -178,7 +178,10 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </select>
      
      <input type="hidden" name="pedido" value="<?php echo $pedido; ?>" />
-     <input type="text" name="observacao" value="aqui vai a observação"/>
+     <input type="text" name="observacao" value="observação"/>
+     <input type="text" value="Orçamento" disabled=""/>
+     <input type="checkbox" name="orcamento" value="on"/>
+     
      <button type="submit">Finalizar Pedido</button>
      
          
@@ -189,5 +192,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      
  </fieldset>
  </form>
-     <a href='GerenciaCadastroPedido.php'>Retornar Para Pedidos</a>
+     <a href='GerenciaCadastroPedido.php'>Retornar Para Pedidos Em Aberto</a></br>
+     <a href='../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php'>Retornar Para Pedidos Em Orçamento</a></br>
+     <a href='../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php'>Retornar Para Pedidos Finalizados</a>
  </body>

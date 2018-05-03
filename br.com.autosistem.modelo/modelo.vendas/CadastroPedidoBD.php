@@ -43,7 +43,12 @@ class CadastroPedidoBD {
         if($update){
         
         echo "Pedido Finalizado Com Sucesso!";
-        header('refresh:2, TelaCadastroPedido.php');
+        if($status==="orcamento"){
+        header ("refresh:2, ../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php");
+        }
+        if($status==="fechado"){
+        header ("refresh:2, ../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php");
+        }
         
     } else {
         echo "erro ao tentar alterar";
@@ -52,7 +57,7 @@ class CadastroPedidoBD {
      
     }
     function excluir
-    ($codigo){
+    ($codigo,$status){
       $cbd = new ConexaoBD();
        $query = "DELETE FROM pedido WHERE codigo_pedido='$codigo'";
                       
@@ -62,8 +67,16 @@ class CadastroPedidoBD {
         if($delete){
         
         echo "Pedido Excluido Com Sucesso!";
+
+        if($status==="aberto"){
         header('refresh:2, GerenciaCadastroPedido.php');
-        
+        }
+        if($status==="orcamento"){
+        header ("refresh:2, ../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php");
+        }
+        if($status==="fechado"){
+        header ("refresh:2, ../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php");
+        }
     } else {
         echo "erro ao tentar excluir";
         header('refresh:2, GerenciaCadastroPedido.php');

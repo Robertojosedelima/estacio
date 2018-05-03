@@ -6,11 +6,21 @@ include("../../br.com.autosistem.modelo/modelo.vendas/CadastroPedidoBD.php");
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+$orcamento = $_POST['orcamento'];
 $codigo_pedido = $_POST['pedido'];
 $observacao = $_POST['observacao'];
 $pagamento = $_POST['pagamento'];
-$status = "fechado";
+
+if($orcamento == ""){
+    
+    $status = "fechado";
+    
+    
+}else{
+    $status = "orcamento";
+}
+
+
 
 
 $cpbd = new CadastroPedidoBD();

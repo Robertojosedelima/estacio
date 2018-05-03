@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-include("../../br.com.autosistem.controle/controle.empresa/PessoaJuridica.php");
+include("../../br.com.autosistem.controle/controle.empresa/ClientePessoaJuridica.php");
 include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaJuridicaBD.php");
 
 $razao_social = $_POST["razaosocial"];
@@ -32,7 +32,7 @@ $referencia = $_POST["referencia"];
 $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
-$pj = new PessoaJuridica();
+$pj = new ClientePessoaJuridica();
 $ccpjbd = new CadastroClientePessoaJuridicaBD();
 
 $pj->setRazao_social($razao_social);
