@@ -33,7 +33,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      
      <tr>
      <td><?php echo $dados['codigo_pedido']; ?></td>
-     <td><?php echo $dados1['nome']; ?><?php echo $dados2['nome_fantasia']; ?></td>
+     <td><?php echo $dados1['nome']; ?> <?php echo $dados2['nome_fantasia']; ?></td>
      <td><?php echo $dados['nome']; ?></td>
      <td><?php echo $dados['data']; ?></td>
      <td><?php echo $dados['hora']; ?></td>

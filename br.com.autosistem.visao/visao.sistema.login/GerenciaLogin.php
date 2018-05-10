@@ -8,6 +8,7 @@ $sql = "select* from cadastro_usuario WHERE usuario ='$usuario' AND senha ='$sen
 $resultado = mysqli_query($cbd->conecta(),$sql);
 $dados = mysqli_fetch_assoc($resultado);
 $funcionario_fk = $dados['funcionario_fk'];
+
 $row = mysqli_num_rows($resultado);
 
 if($row > 0){
@@ -18,6 +19,7 @@ if($row > 0){
     $sobre_nome = $dados01['sobre_nome'];
     $funcao = $dados01['funcao'];
     $email = $dados01['email'];
+    $telefone_celular01 = $dados01['telefone_celular01'];
     // INICIA UMA SESSAO.
     session_start();
     $_SESSION['codigo']=$dados['codigo_usuario'];
@@ -27,6 +29,7 @@ if($row > 0){
     $_SESSION['sobre_nome']= $sobre_nome;
     $_SESSION['funcao']= $funcao;
     $_SESSION['email']= $email;
+    $_SESSION['telefone']= $telefone_celular01;
     
     if($dados['area']=='Administrativo'){
     echo " SEJA BEM VINDO ADMINISTRADOR";

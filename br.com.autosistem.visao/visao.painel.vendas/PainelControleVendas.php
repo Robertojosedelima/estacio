@@ -90,7 +90,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
         <nav>
             <div class="item">
                 <a href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
-                <?php echo $_SESSION["nome"]; ?>
+                
                 
                 <input type="checkbox" id="check1">
                 <label for="check1">Gerenciamento</label>
