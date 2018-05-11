@@ -11,7 +11,7 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroEmpresaBD.php");
 
     ?>
 
-<a href="TelaCadastroEmpresa.php">Novo Empresa +</a></br></br>
+<!--<a href="TelaCadastroEmpresa.php">Novo Empresa +</a></br></br>-->
 
 
     

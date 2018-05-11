@@ -55,7 +55,7 @@ and open the template in the editor.
      </td></tr>
      <tr><td>
      <label for="name">CPF/CNPJ:</label>
-     <input type="number" name="cpfcnpj" />
+     <input type="number" required="" name="cpfcnpj" />
      </td></tr>
      <tr><td>
      <label for="name">NIT ou PIS/PASEP:</label>

@@ -12,7 +12,14 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
 <a href="../../br.com.autosistem.visao/crud.pedidos/TelaCadastroPedido.php" >Novo Pedido +</a></br></br>
    SÓ PEDIDOS EM ORÇAMENTO. 
-           
+    <?php  
+session_start();
+if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
+   header('refresh:1,../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php'); 
+}
+
+
+?>               
     <?php
    echo"<table border=1>";
    echo"<th>Numero</th>";
@@ -22,7 +29,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
    echo"<th>Status</th>";
    echo"<th>Observacao</th>";
    echo"<th>Vendedor</th>";
-   
+   $codigo_usuario = $_SESSION['codigo'];
   
     
     $cbd = new ConexaoBD();
@@ -30,7 +37,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $sql = "select * from pedido p "
             . "inner join cadastro_usuario u on (p.vendedor_fk = u.codigo_usuario)"
             . "inner join cadastro_funcionario f on (f.cpf = u.funcionario_fk)"
-            . "WHERE p.status='$situacao'";
+            . "WHERE p.status='$situacao' AND vendedor_fk ='$codigo_usuario'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
         $codigo = $dados['codigo_pedido'];

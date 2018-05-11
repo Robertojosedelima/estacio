@@ -16,7 +16,16 @@ class Empresa extends PessoaJuridica{
     //put your code here
     private $login;
     private $senha;
-    public function getLogin() {
+    private $area;
+    public function getArea() {
+        return $this->area;
+    }
+
+    public function setArea($area) {
+        $this->area = $area;
+    }
+
+        public function getLogin() {
         return $this->login;
     }
 

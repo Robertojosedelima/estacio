@@ -25,6 +25,11 @@ $referencia = $_POST["referencia"];
 $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
+$login = $_POST["login"];
+$senha = $_POST["senha"];
+$area = "Administrativo";
+
+
 
 $em = new Empresa();
 $cebd = new CadastroEmpresaBD();
@@ -40,6 +45,10 @@ $em->setTelefone_residencial($telefone_residencial);
 $em->setRamal($ramal);
 $em->setTelefone_celular01($telefone_celular01);
 $em->setTelefone_celular02($telefone_celular02);
+//-------------------------------------------------------
+$em->setArea($area);
+$em->setLogin($login);
+$em->setSenha($senha);
 
 //-------------------------------------------------------
 
@@ -63,7 +72,7 @@ $cebd->inserir(
         $em->getRamal(), $em->getTelefone_celular01(), $em->getTelefone_celular02(), $em->getCep(), 
         $em->getEstado(), $em->getCidade(), $em->getBairro(), $em->getRua(), $em->getNumero(), 
         $em->getComplemento(), $em->getPonto_referencia(), $em->getPessoa_referencia01(), 
-        $em->getPessoa_referencia02());
+        $em->getPessoa_referencia02(), $em->getArea(), $em->getLogin(), $em->getSenha());
 
 
 

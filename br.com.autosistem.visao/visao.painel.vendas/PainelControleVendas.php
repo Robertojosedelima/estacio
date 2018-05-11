@@ -119,7 +119,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                 <input type="checkbox" id="check3">
                 <label for="check3">Configurações</label>
                 <ul>
-                    <li><a href="../../br.com.autosistem.visao/crud.usuario/GerenciaAlteraSenha.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Senha" id="funcao">Alterar Senha</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.usuario/GerenciaAlteraSenha.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Senha" id="funcao">Alterar Dados Da Conta</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.nota/GerenciaCadastroNota.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Nota Fiscal" id="funcao">Nota Fiscal</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.nota/GerenciaImpressao.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Imprimir Nota Fiscal" id="funcao">Impimir Nota Fiscal</a></li>
                     

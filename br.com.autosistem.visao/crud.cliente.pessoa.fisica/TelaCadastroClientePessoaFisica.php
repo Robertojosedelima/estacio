@@ -42,7 +42,7 @@ and open the template in the editor.
      </td></tr>
       <tr><td>
      <label for="name">Cpf:</label>
-     <input type="number" name="cpf" />
+     <input type="number" required="" name="cpf" />
      </td></tr>
       </table>
 </fieldset>

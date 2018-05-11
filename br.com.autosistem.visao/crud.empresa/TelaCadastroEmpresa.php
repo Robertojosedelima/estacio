@@ -5,6 +5,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
 <!DOCTYPE html>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>CADASTRO DE SUA EMPRESA</title>
@@ -30,12 +31,12 @@ and open the template in the editor.
      <input type="text" name="nomefantasia" />
      </td></tr>
      <tr><td>
-     <label for="name">Data De Parceria:</label>
+     <label for="name">Data De Atividade:</label>
      <input type="date" name="dataparceria" />
      </td></tr>
      <tr><td>
      <label for="name">CPF/CNPJ:</label>
-     <input type="number" name="cpfcnpj" />
+     <input type="number" required="" name="cpfcnpj" />
      </td></tr>
      <tr><td>
      <label for="name">NIT ou PIS/PASEP:</label>
@@ -151,6 +152,24 @@ and open the template in the editor.
      <tr><td>
      <label for="name">Pessoa de Referencia 02:</label>
      <input type="text" name="pessoa02" />
+     </td></tr>
+   
+     </table>
+     
+     
+ </fieldset>
+ <fieldset>
+     <legend>Dados de Login</legend>
+     <br/>
+     <table>
+     <tr><td>
+     <label for="name">Login:</label>
+     <input type="text" name="login"/>
+     </td></tr>   
+     <tr><td>
+     <label for="name">Senha:</label>
+     <input type="password" name="senha" />
+     <input type="hidden" name="area"/>
      </td></tr>
    
      </table>

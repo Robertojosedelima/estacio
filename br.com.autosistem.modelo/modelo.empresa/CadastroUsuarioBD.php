@@ -52,6 +52,28 @@ class CadastroUsuarioBD {
     
         
     }
+    function alterarSenha
+   ($codigo,$usuario, $senha){
+      $cbd = new ConexaoBD();
+      $query = "UPDATE cadastro_usuario SET usuario='$usuario',senha='$senha' WHERE codigo_usuario='$codigo'";
+                      
+      
+       $update = mysqli_query($cbd->conecta(),$query);
+   
+        if($update){
+        
+        echo "Usuario e Senha Alterados Com Sucesso!";
+        header('refresh:1, GerenciaAlteraSenha.php');
+        
+    } else {
+        echo "erro ao tentar alterar";
+        header('refresh:2, GerenciaAlteraSenha.php');
+    }
+        
+        
+    
+        
+    }
     function excluir
     ($codigo){
       $cbd = new ConexaoBD();

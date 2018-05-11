@@ -47,7 +47,7 @@ $cbd = new ConexaoBD();
      <input type="text" name="nomefantasia" value="<?php echo $dados['nome_fantasia']; ?>"/>
      </td></tr>
      <tr><td>
-     <label for="name">Data De Parceria:</label>
+     <label for="name">Data De Atividade:</label>
      <input type="date" name="dataparceria" value="<?php echo $dados['data_parceria']; ?>"/>
      </td></tr>
      <tr><td>

@@ -65,7 +65,8 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <tr>
      <td> <?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql1 = "select * from pedido order by codigo_pedido DESC limit 3 WHERE vendedor_fk ='$codigo_usuario' AND status ='fechado'";
+    $codigo_usuario = $_SESSION['codigo'];
+    $sql1 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='fechado'";
     $resultado1 = mysqli_query($cbd->conecta(),$sql1);
     while ($dados1 = mysqli_fetch_array($resultado1)){
     $codigo = $dados1['codigo_pedido'];
@@ -113,24 +114,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
    
    
 </fieldset>
-<fieldset>
- <legend>ULTIMOS ORÇAMENTOS</legend>
-   <br/> 
- <table border="1" bgcolor="#9cf">
-     <th>Ultimos</th>
-     
 
-     
-     <tr>
-     <td></td>
-     
-    
-     </tr>
-
- </table>
-   
-   
-</fieldset>
 <fieldset>
  <legend>DADOS FINANCEIRO</legend>
    <br/> 

@@ -16,7 +16,7 @@ class CadastroEmpresaBD {
      function inserir
     ($razao_social, $nome_fantasia, $data_parceria, $cpf_cnpj, $nit_pis_pasep, $email, $email_alternativo, $telefone_residencial, $ramal, 
             $telefone_celular01, $telefone_celular02, $cep, $estado, $cidade, $bairro, $rua, $numero, 
-            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02){
+            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02, $area, $login, $senha){
         $cbd = new ConexaoBD();
       $query1 = "INSERT INTO endereco "
                 . "(codigo,cep,estado,cidade,bairro,rua,numero,"
@@ -24,19 +24,24 @@ class CadastroEmpresaBD {
                 . "VALUES ('$cpf_cnpj','$cep','$estado','$cidade','$bairro','$rua','$numero','$complemento','$referencia'"
                 . ",'$pessoa_referencia01','$pessoa_referencia02')";
         $insert = mysqli_query($cbd->conecta(),$query1);
-    
-         $query2 = "INSERT INTO cadastro_empresa_responsavel "
+        
+       $query2 = "INSERT INTO cadastro_empresa_responsavel "
                 . "(razao_social,nome_fantasia,data_parceria,cpf_cnpj,nit_pis_pasep,"
                 . "email,email_alternativo,telefone_residencial,"
                 . "ramal,telefone_celular01,telefone_celular02,fk_endereco) "
                 . "VALUES ('$razao_social','$nome_fantasia','$data_parceria','$cpf_cnpj','$nit_pis_pasep','$email','$email_alternativo'"
                 . ",'$telefone_residencial','$ramal','$telefone_celular01','$telefone_celular02','$cpf_cnpj')";
         $insert = mysqli_query($cbd->conecta(),$query2);
+         
+        $query3 = "INSERT INTO cadastro_usuario "
+                . "(area,usuario,senha) "
+                . "VALUES ('$area','$login','$senha')";
+        $insert = mysqli_query($cbd->conecta(),$query3);
         
          
     if($insert){
         echo "Empresa Cadastrada Com Sucesso!";
-        header('refresh:2, GerenciaCadastroEmpresa.php');
+        header('refresh:2, ../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php');
     } else {
         echo "erro ao tentar inserir";
         header('refresh:2, GerenciaCadastroEmpresa.php');
@@ -102,7 +107,7 @@ class CadastroEmpresaBD {
         if($delete){
         
         echo "Empresa Excluida Com Sucesso!";
-        header('refresh:2, GerenciaCadastroEmpresa.php');
+         header('refresh:2, ../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php');;
         
     } else {
         echo "erro ao tentar excluir";

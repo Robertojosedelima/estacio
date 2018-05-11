@@ -86,7 +86,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </td></tr>
       <tr><td>
      <label for="name">Cpf:</label>
-     <input type="number" name="cpf" />
+     <input type="number" required="" name="cpf" />
      </td></tr>
      <tr><td>
      <label for="name">Ctps:</label>

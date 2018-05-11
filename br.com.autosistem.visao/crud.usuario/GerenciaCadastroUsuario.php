@@ -14,7 +14,14 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
 <a href="TelaCadastroUsuario.php">Nova Usuario +</a></br></br>
 
 
-    
+    <?php  
+session_start();
+if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
+   header('refresh:1,../../br.com.autosistem.visao/visao.sistema.login/TelaLogin.php'); 
+}
+
+
+?>
         
            
     <?php
@@ -26,7 +33,11 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
   
     
     $cbd = new ConexaoBD();
-    $sql = "select * from cadastro_usuario";
+    if($_SESSION["nome"]=="ADM-MASTER"){
+    $sql = "select * from cadastro_usuario ";
+    }else{
+    $sql = "select * from cadastro_usuario WHERE area!='Administrativo'";
+    }
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
         $codigo = $dados['codigo_usuario'];
@@ -52,5 +63,5 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroUsuarioBD.php");
        echo"</tr>";
        }
    echo"</table>";
-  
+         
     ?>

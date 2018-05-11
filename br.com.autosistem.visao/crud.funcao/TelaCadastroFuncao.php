@@ -22,7 +22,7 @@ and open the template in the editor.
  <table>
      <tr><td>
      <label for="name">Nome da Nova Função:</label>
-     <input type="text" name="nomedafuncao"/>
+     <input type="text" required="" name="nomedafuncao"/>
      </td></tr> 
      <tr><td>
      <label for="name">Descrição da Nova Função:</label>
