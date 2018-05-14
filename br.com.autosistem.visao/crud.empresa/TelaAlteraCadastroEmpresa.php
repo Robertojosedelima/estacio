@@ -29,7 +29,7 @@ $cbd = new ConexaoBD();
     </head>
     <body>
                 <div>ALTERA CADASTRO DE EMPRESA RESPONSAVEL</div>
-                <form name = "cadastro-empresa" action="AlteraEmpresa.php" method="POST">
+                <form name = "cadastro-empresa" action="AlteraEmpresa.php" method="POST" enctype="multipart/form-data">
             
             
  <!-- DADOS PESSOAIS-->
@@ -176,11 +176,11 @@ $cbd = new ConexaoBD();
      
  </fieldset>
   <fieldset>
-     <legend>Logomarca</legend>
+     <legend>Logomarca (se tiver logomarca é obrigatorio o carregamento.)</legend>
      <br/>
      <table>
      <tr><td>
-   <input name="logomarca" type="file" size="30"/>
+   <input name="logomarca" type="file" />
      </td></tr>
    
      </table>

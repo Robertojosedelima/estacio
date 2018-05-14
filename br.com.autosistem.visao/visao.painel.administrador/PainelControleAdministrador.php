@@ -3,7 +3,18 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
--->
+--><?php
+require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
+  $cbd = new ConexaoBD();
+     $sql = "select * from cadastro_empresa_responsavel er "
+           . "inner join endereco en on (er.fk_endereco = en.codigo)";
+    $resultado = mysqli_query($cbd->conecta(),$sql);
+    $dados = mysqli_fetch_assoc($resultado);
+    $endereco = $dados['rua'].$dados['numero'];
+    
+    
+     
+?>
 <?php  
 session_start();
 if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
@@ -89,8 +100,11 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
     <body>
         <nav>
             <div class="item">
-                <a href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
                 <?php echo $_SESSION["nome"]; ?>
+                <a href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
+                
+                <img src="../../imagem/<?php echo $dados['logomarca'];?>" width="250" height="120" alt="Sem Logo no Momento"/></br>
+                
                 <input type="checkbox" id="check1">
                 <label for="check1">Gerenciamento</label>
                 <ul>

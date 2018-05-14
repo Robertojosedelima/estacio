@@ -32,6 +32,11 @@ $referencia = $_POST["referencia"];
 $pessoa_referencia01 = $_POST["pessoa01"];
 $pessoa_referencia02 = $_POST["pessoa02"];
 
+$foto = $_FILES['logomarca']['name'];
+$_UP['pasta'] = '../../imagem/';
+move_uploaded_file($_FILES['logomarca']['tmp_name'], $_UP['pasta'].$foto);
+
+
 $em = new Empresa();
 $cebd = new CadastroEmpresaBD();
 
@@ -46,6 +51,7 @@ $em->setTelefone_residencial($telefone_residencial);
 $em->setRamal($ramal);
 $em->setTelefone_celular01($telefone_celular01);
 $em->setTelefone_celular02($telefone_celular02);
+$em->setLogomarca($foto);
 
 //-------------------------------------------------------
 
@@ -69,7 +75,7 @@ $cebd->alterar(
         $em->getRamal(), $em->getTelefone_celular01(), $em->getTelefone_celular02(), $em->getCep(), 
         $em->getEstado(), $em->getCidade(), $em->getBairro(), $em->getRua(), $em->getNumero(), 
         $em->getComplemento(), $em->getPonto_referencia(), $em->getPessoa_referencia01(), 
-        $em->getPessoa_referencia02());
+        $em->getPessoa_referencia02(), $em->getLogomarca());
 
 
 

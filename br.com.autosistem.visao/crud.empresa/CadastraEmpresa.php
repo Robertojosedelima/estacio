@@ -29,6 +29,9 @@ $login = $_POST["login"];
 $senha = $_POST["senha"];
 $area = "Administrativo";
 
+$foto = $_FILES['logomarca']['name'];
+$_UP['pasta'] = '../../imagem/';
+move_uploaded_file($_FILES['logomarca']['tmp_name'], $_UP['pasta'].$foto);
 
 
 $em = new Empresa();
@@ -45,6 +48,7 @@ $em->setTelefone_residencial($telefone_residencial);
 $em->setRamal($ramal);
 $em->setTelefone_celular01($telefone_celular01);
 $em->setTelefone_celular02($telefone_celular02);
+$em->setLogomarca($foto);
 //-------------------------------------------------------
 $em->setArea($area);
 $em->setLogin($login);
@@ -72,7 +76,7 @@ $cebd->inserir(
         $em->getRamal(), $em->getTelefone_celular01(), $em->getTelefone_celular02(), $em->getCep(), 
         $em->getEstado(), $em->getCidade(), $em->getBairro(), $em->getRua(), $em->getNumero(), 
         $em->getComplemento(), $em->getPonto_referencia(), $em->getPessoa_referencia01(), 
-        $em->getPessoa_referencia02(), $em->getArea(), $em->getLogin(), $em->getSenha());
+        $em->getPessoa_referencia02(), $em->getArea(), $em->getLogin(), $em->getSenha(), $em->getLogomarca());
 
 
 

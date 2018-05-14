@@ -17,7 +17,16 @@ class Empresa extends PessoaJuridica{
     private $login;
     private $senha;
     private $area;
-    public function getArea() {
+    private $logomarca;
+    public function getLogomarca() {
+        return $this->logomarca;
+    }
+
+    public function setLogomarca($logomarca) {
+        $this->logomarca = $logomarca;
+    }
+
+        public function getArea() {
         return $this->area;
     }
 

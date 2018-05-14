@@ -13,7 +13,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>CADASTRO DE EMPRESA RESPONSÁVEL</div>
-        <form name = "cadastro-nova-empresa" action="CadastraEmpresa.php" method="post">
+        <form name = "cadastro-nova-empresa" action="CadastraEmpresa.php" method="post" enctype="multipart/form-data">
             
             
  <!-- DADOS FORNECEDOR-->
@@ -181,7 +181,7 @@ and open the template in the editor.
      <br/>
      <table>
      <tr><td>
-   <input name="logomarca" type="file" size="30"/>
+   <input name="logomarca" type="file"/>
      </td></tr>
    
      </table>

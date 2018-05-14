@@ -16,7 +16,7 @@ class CadastroEmpresaBD {
      function inserir
     ($razao_social, $nome_fantasia, $data_parceria, $cpf_cnpj, $nit_pis_pasep, $email, $email_alternativo, $telefone_residencial, $ramal, 
             $telefone_celular01, $telefone_celular02, $cep, $estado, $cidade, $bairro, $rua, $numero, 
-            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02, $area, $login, $senha){
+            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02, $area, $login, $senha, $logomarca){
         $cbd = new ConexaoBD();
       $query1 = "INSERT INTO endereco "
                 . "(codigo,cep,estado,cidade,bairro,rua,numero,"
@@ -28,9 +28,9 @@ class CadastroEmpresaBD {
        $query2 = "INSERT INTO cadastro_empresa_responsavel "
                 . "(razao_social,nome_fantasia,data_parceria,cpf_cnpj,nit_pis_pasep,"
                 . "email,email_alternativo,telefone_residencial,"
-                . "ramal,telefone_celular01,telefone_celular02,fk_endereco) "
+                . "ramal,telefone_celular01,telefone_celular02,fk_endereco,logomarca) "
                 . "VALUES ('$razao_social','$nome_fantasia','$data_parceria','$cpf_cnpj','$nit_pis_pasep','$email','$email_alternativo'"
-                . ",'$telefone_residencial','$ramal','$telefone_celular01','$telefone_celular02','$cpf_cnpj')";
+                . ",'$telefone_residencial','$ramal','$telefone_celular01','$telefone_celular02','$cpf_cnpj','$logomarca')";
         $insert = mysqli_query($cbd->conecta(),$query2);
          
         $query3 = "INSERT INTO cadastro_usuario "
@@ -51,7 +51,7 @@ class CadastroEmpresaBD {
     ($razao_social, $nome_fantasia, $data_parceria, $cpf_cnpj, $nit_pis_pasep, $email, $email_alternativo, 
             $telefone_residencial, $ramal, 
             $telefone_celular01, $telefone_celular02, $cep, $estado, $cidade, $bairro, $rua, $numero, 
-            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02){
+            $complemento, $referencia, $pessoa_referencia01, $pessoa_referencia02, $logomarca){
       $cbd = new ConexaoBD();
       $query1 = "UPDATE endereco SET codigo='$cpf_cnpj',"
               . "cep='$cep',estado='$estado',cidade='$cidade',bairro='$bairro',"
@@ -69,7 +69,7 @@ class CadastroEmpresaBD {
                . "email='$email',email_alternativo='$email_alternativo',"
                . "telefone_residencial='$telefone_residencial',"
                . "ramal='$ramal',telefone_celular01='$telefone_celular01',"
-               . "telefone_celular02='$telefone_celular02',fk_endereco='$cpf_cnpj'"
+               . "telefone_celular02='$telefone_celular02',fk_endereco='$cpf_cnpj',logomarca='$logomarca'"
                . "WHERE cpf_cnpj='$cpf_cnpj'"; 
        
         $update = mysqli_query($cbd->conecta(),$query2);
