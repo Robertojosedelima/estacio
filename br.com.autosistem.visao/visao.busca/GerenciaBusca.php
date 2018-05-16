@@ -1,3 +1,5 @@
+
+LISTA DE TODOS OS PRODUTOS CADASTRADOS.
 <?php
 
 /* 
@@ -11,9 +13,9 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
 
     ?>
 
-<a href="TelaCadastroProdutos.php">Nova Produto +</a></br></br>
 
-<a href="GerenciaEstoque.php"></a>
+
+
     
         
            
@@ -22,18 +24,29 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
    echo"<th>Codigo</th>";
    echo"<th>Nome</th>";
    echo"<th>Descricao</th>";
+   echo"<th>Modelo</th>";
+   echo"<th>Fabricante</th>";
+   echo"<th>Quantidade no Estoque</th>";
+   echo"<th>Valor Unitario</th>";
    
    
   
     
     $cbd = new ConexaoBD();
-    $sql = "select * from cadastro_produtos";
+    
+    $sql = "select * from cadastro_fornecimento f "
+            . "inner join cadastro_produtos p on (f.produto_fk = p.codigo_produto)"
+            . "inner join cadastro_fornecedor fo on (f.fornecedor_fk = fo.cpf_cnpj)";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['codigo_produto'];
+        $codigo = $dados['codigo_fornecimento'];
         $nome = $dados['nome'];
         $descricao = $dados['descricao'];
-       
+        $quantidade = $dados['quantidade'];
+        $valor = $dados['valor'];
+        $modelo = $dados['modelo'];
+        $fabricante = $dados['razao_social'];
+        $marca = $dados['nome_fantasia'];
 
        echo"<tr>";
        echo"<td>";
@@ -46,11 +59,18 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
        echo"$descricao";
        echo"</td>";
        echo"<td>";
-       echo"<a href='TelaAlteraCadastroProdutos.php?id=".$codigo."'>Alterar</a>";
+       echo"$modelo";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaProduto.php?id=".$codigo."'>Deletar</a>";
+       echo"$fabricante / $marca";
        echo"</td>";
+       echo"<td>";
+       echo"$quantidade";
+       echo"</td>";
+       echo"<td>";
+       echo"$valor";
+       echo"</td>";
+       
        echo"</tr>";
        }
    echo"</table>";

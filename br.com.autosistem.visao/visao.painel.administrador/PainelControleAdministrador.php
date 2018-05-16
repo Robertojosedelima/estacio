@@ -113,6 +113,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                     <li><a href="../../br.com.autosistem.visao/crud.fornecedor/GerenciaCadastroFornecedor.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Fornecedor" id="funcao">Fornecedor</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/GerenciaCadastroClientePessoaFisica.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia cliente pessoa fisica" id="funcao">Cliente Pessoa Fisica</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/GerenciaCadastroClientePessoaJuridica.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia cliente pessoa juridica" id="funcao">Cliente Pessoa Juridica</a></li>
+                    
                    
 
                 </ul>
@@ -121,11 +122,11 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
             <div class="item">
                 
                 <input type="checkbox" id="check2">
-                <label for="check2">Relatórios</label>
+                <label for="check2">Listar</label>
                 <ul>
-                    <li><a href="">Administrativo</a></li>
-                    <li><a href="">Operacional</a></li>
-                    <li><a href="">Vendas</a></li>
+                    <li><a href="../../br.com.autosistem.visao/visao.sistema.relatorio/GerenciaPedido.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Relatorio Pedidos" id="funcao">Pedidos Pendentes</a></li>
+                    <li><a href="../../br.com.autosistem.visao/visao.sistema.relatorio/GerenciaVenda.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Relatorio Vendas" id="funcao">Vendas Realizadas</a></li>
+                    <li><a href="../../br.com.autosistem.visao/visao.sistema.relatorio/GerenciaOrcamento.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Relatorio Orcamento" id="funcao">Orcamentos</a></li>
                     
                 </ul>
                 
@@ -140,6 +141,29 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                     <li><a href="../../br.com.autosistem.visao/crud.empresa/GerenciaCadastroEmpresa.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Empresa" id="funcao">Gerencia Empresa</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.estoque/GerenciaEstoque.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Estoque" id="funcao">Produto</a></li>
                     <li><a href="../../br.com.autosistem.visao/crud.fornecimento/GerenciaFornecimento.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Fornecimento" id="funcao">Fornecimento</a></li>
+                    
+                </ul>
+                
+            </div>
+           
+            <div class="item">
+                
+                <input type="checkbox" id="check4">
+                <label for="check4">Complementos</label>
+                <ul>
+                    <li><a href="../../br.com.autosistem.visao/crud.complemento.produto/GerenciaComplementoProduto.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Complemento de Produto" id="funcao">Complementar Produto</a></li>
+                    <li><a href="../../br.com.autosistem.visao/crud.complemento.funcao/GerenciaComplementoFuncao.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Complemento de Funcao" id="funcao">Complementar Funcao</a></li>
+                    
+                </ul>
+                
+            </div>
+            <div class="item">
+                
+                <input type="checkbox" id="check5">
+                <label for="check5">Garantia</label>
+                <ul>
+                    <li><a href="../../br.com.autosistem.visao/crud.garantia/GerenciaGarantia.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Gerencia Garantia" id="funcao">Gerenciar Garantia</a></li>
+                    
                     
                 </ul>
                 

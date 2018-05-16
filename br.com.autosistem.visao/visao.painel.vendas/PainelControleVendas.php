@@ -122,9 +122,9 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
             <div class="item">
                 
                 <input type="checkbox" id="check2">
-                <label for="check2">Busca Rapida</label>
+                <label for="check2">Lista Rapida</label>
                 <ul>
-                    <li><a href="">Produto</a></li>
+                    <li><a href="../../br.com.autosistem.visao/visao.busca/GerenciaBusca.php" onclick="window.open(this.href,'funcao','aling=right','width=580,height=400'); return false;" title="Listar Vendas" id="funcao">Listar Produtos</a></li>
                   
                 </ul>
                 
