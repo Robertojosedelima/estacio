@@ -13,7 +13,7 @@ $lote = $_POST['lote'];
 $tempo_garantia = $_POST['tempo_garantia'];
 $observacao_garantia = $_POST['observacao_garantia'];
 $altura = $_POST['altura'];
-$lagura = $_POST['largura'];
+$largura = $_POST['largura'];
 $peso_produto = $_POST['peso_produto'];
 $peso_embalagem = $_POST['peso_embalagem'];
 $itens_produto = $_POST['itens_produto'];
@@ -40,8 +40,7 @@ $ccp->setTelefone_fabricante($telefone_fabricante);
 
 $ccpbd = new CadastroComplementoProdutoBD();
 
-$ccpbd->inserir($ccp->getFornecimento_fk(), $ccp->getCodigo_fabricacao(), $ccp->getData_fabricacao(), $ccp->getLote(), $ccp->getTempo_garantia(),
-        $ccp->getObservacao_garantia(), $ccp->getAltura(), $ccp->getLargura(), $ccp->getPeso_produto(), $ccp->getPeso_embalagem(), $ccp->getItens_produto(), $ccp->getSite_fabricante(), $ccp->getTelefone_fabricante())
+$ccpbd->inserir($ccp->getFornecimento_fk(), $ccp->getCodigo_fabricacao(), $ccp->getData_fabricacao(), $ccp->getLote(), $ccp->getTempo_garantia(),$ccp->getObservacao_garantia(), $ccp->getAltura(), $ccp->getLargura(), $ccp->getPeso_produto(), $ccp->getPeso_embalagem(), $ccp->getItens_produto(), $ccp->getSite_fabricante(), $ccp->getTelefone_fabricante());
 
 
 ?>

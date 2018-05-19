@@ -82,15 +82,15 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </td></tr> 
      <tr><td>
      <label for="name">Altura:</label>
-     <input type="number" name="altura"/>
+     <input type=text" name="altura"/>
      </td></tr>   
      <tr><td>
      <label for="name">Largura:</label>
-     <input type="number" name="largura"/>
+     <input type="text" name="largura"/>
      </td></tr>   
      <tr><td>
      <label for="name">Peso do Produto:</label>
-     <input type="number" name="peso_produto"/>
+     <input type="text" name="peso_produto"/>
      </td></tr>  
      <tr><td>
      <label for="name">Peso da Embalagem:</label>
