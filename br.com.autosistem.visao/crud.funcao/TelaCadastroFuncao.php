@@ -41,7 +41,7 @@ and open the template in the editor.
      <table>
      <tr><td>
      <label for="name">Salario:</label>
-     <input type="number" name="salario"/>
+     <input type="text" name="salario"/>
      </td></tr>   
     
      </table>

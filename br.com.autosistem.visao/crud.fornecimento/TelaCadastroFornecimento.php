@@ -88,7 +88,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </td></tr>   
       <tr><td>
      <label for="name">Valor:</label>
-     <input type="number" name="valor"/>
+     <input type="text" name="valor"/>
      </td></tr>   
      
    

@@ -30,7 +30,7 @@ $cbd = new ConexaoBD();
 
  
  <fieldset>
-     <legend>Dados do complementar</legend>
+     <legend>Dados do complemento</legend>
      <br/>
      <table>
      <tr><td>

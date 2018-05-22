@@ -57,7 +57,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  </fieldset>
  
  <fieldset>
-     <legend>Dados do complementar</legend>
+     <legend>Dados do complemento</legend>
      <br/>
      <table>
      <tr><td>

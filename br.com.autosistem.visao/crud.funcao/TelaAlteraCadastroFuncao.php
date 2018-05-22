@@ -55,7 +55,7 @@ $cbd = new ConexaoBD();
      <table>
      <tr><td>
      <label for="name">Salario:</label>
-     <input type="number" name="salario" value="<?php echo $dados['salario']; ?>"/>
+     <input type="text" name="salario" value="<?php echo $dados['salario']; ?>"/>
      </td></tr>   
     
      </table>

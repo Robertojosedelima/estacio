@@ -5,7 +5,8 @@ include("../../br.com.autosistem.modelo/modelo.complemento/CadastroComplementoFu
 
 
 
-$codigo_complemento_funcao = $_POST['codigo_complemento_funcao'];
+
+$funcao_fk = $_POST['funcao'];
 $bonus_salarial = $_POST['bonus_salarial'];
 $prl = $_POST['prl'];
 $vale_alimentacao = $_POST['vale_alimentacao'];
@@ -21,7 +22,7 @@ $observacao = $_POST['observacao'];
 
 $ccf = new ComplementoFuncao();
 
-$ccf->setFuncao_fk($codigo_complemento_funcao);
+$ccf->setFuncao_fk($funcao_fk);
 $ccf->setBonus_salarial($bonus_salarial);
 $ccf->setPrl($prl);
 $ccf->setVale_alimentacao($vale_alimentacao);
@@ -37,7 +38,7 @@ $ccf->setObservacao($observacao);
 
 $ccfbd = new CadastroComplementoFuncaoBD();
 
-$ccfbd->alterar($ccf->getFuncao_fk(), $ccf->getBonus_salarial(), $ccf->getPrl(), $ccf->getVale_alimentacao(), 
+$ccfbd->inserir($ccf->getFuncao_fk(), $ccf->getBonus_salarial(), $ccf->getPrl(), $ccf->getVale_alimentacao(), 
         $ccf->getVale_refeicao(), $ccf->getVale_combustivel(), $ccf->getVale_saude(), $ccf->getVale_cultura(), 
         $ccf->getVale_educacao(), $ccf->getCarga_horaria_mensal(), $ccf->getCarga_horaria_anual(), $ccf->getData_inicio(), 
         $ccf->getObservacao())

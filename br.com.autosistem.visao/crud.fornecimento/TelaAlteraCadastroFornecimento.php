@@ -110,7 +110,7 @@ $cbd = new ConexaoBD();
      </td></tr>   
       <tr><td>
      <label for="name">Valor:</label>
-     <input type="number" name="valor" value="<?php echo $dados2['valor']; ?>"/>
+     <input type="text" name="valor" value="<?php echo $dados2['valor']; ?>"/>
      </td></tr>   
      
    
