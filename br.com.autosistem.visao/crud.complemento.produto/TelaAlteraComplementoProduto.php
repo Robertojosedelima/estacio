@@ -34,7 +34,6 @@ $cbd = new ConexaoBD();
      <br/>
      <table>
      <tr><td>
-     
      <input type="hidden" name="codigo_complemento_produto" value="<?php echo $id; ?>"/>
      </td></tr>
      <tr><td>
