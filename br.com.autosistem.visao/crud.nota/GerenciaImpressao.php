@@ -1,3 +1,3 @@
 <?php
 
-echo"Imprimir Nota";
+echo"Não Disponivel";

@@ -35,7 +35,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
     $sql = "select * from pedido p "
             . "inner join cadastro_usuario u on (p.vendedor_fk = u.codigo_usuario)"
             . "inner join cadastro_funcionario f on (f.cpf = u.funcionario_fk)"
-            . "WHERE p.status='$situacao' AND vendedor_fk ='$codigo_usuario'";
+            . "WHERE p.status='$situacao' AND p.vendedor_fk ='$codigo_usuario'";
     $resultado = mysqli_query($cbd->conecta(),$sql);
     while ($dados = mysqli_fetch_array($resultado)){
         $codigo = $dados['codigo_pedido'];

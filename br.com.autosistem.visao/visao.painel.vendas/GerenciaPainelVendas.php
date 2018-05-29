@@ -116,35 +116,81 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 </fieldset>
 
 <fieldset>
- <legend>DADOS FINANCEIRO</legend>
+
+ <legend>DADOS FINANCEIRO ANUAL</legend>
    <br/> 
  <table border="1" bgcolor="#9cf">
-     <th>Total Venda Més</th>
-     <th>Total Venda </th>
+     <th>Total Vendas Més</th>
+     <th>Total Vendas Ano</th>
      <th>Quantidade de Itens Vendidos</th>
      <th>Quantidade de Vendas Realizadas Més</th>
-     <th>Quantidade Total de Vendas </th>
+     <th>Quantidade de Vendas Realizadas Ano</th>
      
      <tr>
-     <td>1</td>
-     <td>2</td>
-     <td>3</td>
-     <td>4</td>
-     <td>5</td>
-     </tr>
-
- </table>
-</fieldset>
-<fieldset>
- <legend>DADOS ESTOQUE</legend>
-   <br/> 
- <table border="1" bgcolor="#9cf">
-     <th>Produtos Mais Vendidos</th>
-     
-     
-     <tr>
-     <td>1</td>
-     
+     <td>R$:<?php
+            $modelo_ano = date('Y');
+            $modelo_mes = date('m');
+            $sql4 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.vendedor_fk ='$codigo_usuario' AND p.status='fechado' AND year(p.data)='$modelo_ano' AND month(p.data)='$modelo_mes'";
+            $resultado4 = mysqli_query($cbd->conecta(),$sql4);
+            while ($dados4 = mysqli_fetch_array($resultado4)){
+            $valores = $dados4['total'];
+            $total_de_vendas_mes = $valores + @$total_de_vendas_mes;
+   }
+   
+    echo @$total_de_vendas_mes;
+    ?></td>
+     <td>R$:<?php
+            $sql5 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.vendedor_fk ='$codigo_usuario' AND p.status='fechado' AND year(p.data)='$modelo_ano'";
+            $resultado5 = mysqli_query($cbd->conecta(),$sql5);
+            while ($dados5 = mysqli_fetch_array($resultado5)){
+            $valores = $dados5['total'];
+            $total_de_vendas = $valores + @$total_de_vendas;
+   }
+    echo $total_de_vendas;
+    ?></td>
+     <td><?php
+            $sql6 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.vendedor_fk ='$codigo_usuario' AND p.status='fechado' AND year(p.data)='$modelo_ano'";
+            $resultado6 = mysqli_query($cbd->conecta(),$sql6);
+            while ($dados6 = mysqli_fetch_array($resultado6)){
+            $itens = $dados6['quantidade_escolhida'];
+            $quantidade = $itens + @$quantidade;
+   }
+    echo @$quantidade;
+    ?> Unidades</td>
+       <td><?php
+          
+            $modelo_ano = date('Y');
+            $modelo_mes = date('m');
+            $sql7 = "select * from pedido  "
+            . "WHERE vendedor_fk ='$codigo_usuario' AND status='fechado' AND year(data)='$modelo_ano' AND month(data)='$modelo_mes'";
+            $resultado7 = mysqli_query($cbd->conecta(),$sql7);
+            while ($dados7 = mysqli_fetch_array($resultado7)){
+                 
+                @$quantidade_total_de_vendas_mes=$quantidade_total_de_vendas_mes+1;
+   }
+   
+    echo @$quantidade_total_de_vendas_mes;
+    ?> Vendas</td>
+     <td><?php
+          
+            $modelo_ano = date('Y');
+            $modelo_mes = date('m');
+            $sql8 = "select * from pedido  "
+            . "WHERE vendedor_fk ='$codigo_usuario' AND status='fechado' AND year(data)='$modelo_ano'";
+            $resultado8 = mysqli_query($cbd->conecta(),$sql8);
+            while ($dados8 = mysqli_fetch_array($resultado8)){
+                 
+                @$quantidade_total_de_vendas_ano=$quantidade_total_de_vendas_ano+1;
+   }
+   
+    echo @$quantidade_total_de_vendas_ano;
+    ?> Vendas</td>
      </tr>
 
  </table>
