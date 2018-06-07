@@ -96,17 +96,26 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                 transform: all;
                 
             }
+             .log{background-color: #9cf;
+                 border: 1px solid #aaa; }
+            .log1{background-color: #aaa;
+                 color: #ffffff;
+                 float: right;
+                 text-decoration: none;}
+            .log1:hover{
+                background-color: #f2673a;
+            }
             </style>
     </head>
     <body>
         <nav>
-            <div class="item">
+            <div class="log">
                 <?php echo $_SESSION["nome"]; ?>
-                <a href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
+                <a class="log1" href="../../br.com.autosistem.visao/visao.sistema.login/Logout.php">Logout</a>
                 
-                <img src="../../imagem/<?php echo $dados['logomarca'];?>" width="250" height="120" alt="Sem Logo no Momento"/></br>
-                
-                
+                <img src="../../imagem/<?php echo $dados['logomarca'];?>" width="248" height="120" alt="Sem Logo no Momento"/></br>
+            </div>
+                <div class="item">
                 <input type="checkbox" id="check1">
                 <label for="check1">Gerenciamento</label>
                 <ul>
