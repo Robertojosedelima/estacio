@@ -3,7 +3,8 @@
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
---><?php
+-->
+    <?php
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
   $cbd = new ConexaoBD();
      $sql = "select * from cadastro_empresa_responsavel er "
