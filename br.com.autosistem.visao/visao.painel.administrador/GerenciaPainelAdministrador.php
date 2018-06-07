@@ -1,5 +1,73 @@
-
-
+<html>
+<head>
+    <title>Gerenciamento adm</title>
+    <style type="text/css">
+        
+        table{border-spacing:0px;
+              border-collapse:collapse;
+              
+             
+              
+             
+          }
+        th{border:1px solid #aaa;
+           background-color: #f2673a;
+           padding: 0px;
+           text-align: left;
+           height: 40px;
+           width: 300px;
+           font-family: Arial;
+           margin-top: 10px;
+           color: #ffffff;
+           font-size: 16px;
+           
+           }
+            .dif{border:1px solid #aaa;
+           background-color: #434343;
+           padding: 0px;
+           text-align: left;
+           height: 40px;
+           width: 600px;
+           font-family: Arial;
+           margin-top: 10px;
+           color: #ffffff;
+           font-size: 16px;
+           
+           }
+        td{border:1px solid #aaa}
+        tr{background-color: #ffffff;}
+        fieldset{background-color: #9cf;
+                 margin-left: 300px;
+                 margin-right: 30px;
+                 border: 1px solid #aaa;
+                
+                 }
+                 .field1{background-color: #7b8085;
+                 margin-left: 300px;
+                 margin-right: 30px;
+                 border: 1px solid #aaa;
+                
+                 }         
+        legend{color: #434343;
+               font-weight:bolder;
+               padding: 0px;
+               font-family: Arial;
+               background-color: #9cf;}
+        .legend{color: #434343;
+               font-weight:bolder;
+               padding: 0px;
+               font-family: Arial;
+               background-color: #7b8085;}
+                 
+        body{ background-color: #e8e8e8;
+             margin-left: 50px;
+              margin-top: 10px;}
+        
+        
+        
+    </style>
+    
+</head>
 <?php
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
   $cbd = new ConexaoBD();
@@ -12,15 +80,18 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     
      
 ?>
-<fieldset>
- <legend>DADOS DO USUARIO</legend>
-   <br/> 
- <table border="1" bgcolor="#9cf">
-     <th>Nome</th>
-     <th>Função</th>
-     <th>Usuario</th>
-     <th>Email</th>
-     <th>Telefone</th>
+
+<body>
+    
+ <fieldset>
+  <legend ></legend>
+ <table >
+     <legend >DADOS DO USUARIO</legend>
+     <th class="dif">Nome</th>
+     <th class="dif">Função</th>
+     <th class="dif">Usuario</th>
+     <th class="dif">Email</th>
+     <th class="dif">Telefone</th>
      
      <tr>
      <td><?php echo $_SESSION['nome'];?></td>
@@ -31,16 +102,17 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-</fieldset>
-<fieldset>
- <legend>DADOS DA EMPRESA</legend>
+
+
+ 
    <br/> 
- <table border="1" bgcolor="#9cf">
-     <th>Nome da Empresa</th>
-     <th>Razão Social</th>
-     <th>Cnpj</th>
-     <th>Endereço</th>
-     <th>Telefone</th>
+ <table>
+     <legend>DADOS DA EMPRESA</legend>
+     <th class="dif">Nome da Empresa</th>
+     <th class="dif">Razão Social</th>
+     <th class="dif">Cnpj</th>
+     <th class="dif">Endereço</th>
+     <th class="dif">Telefone</th>
      
      <tr>
      <td><?php echo $dados['nome_fantasia'];?></td>
@@ -51,13 +123,14 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-</fieldset>
-<fieldset>
-    
-    
- <legend>ULTIMAS VENDAS & ORÇAMENTOS</legend>
-   <br/> 
- <table border="1" bgcolor="#9cf">
+
+ </fieldset>  
+  <br>
+ <fieldset class="field1">   
+ <legend ></legend>
+  
+ <table>
+     <legend class="legend">ULTIMAS VENDAS & ORÇAMENTOS</legend>
      <th>Ultimas Vendas Realizadas</th>
      <th>Ultimas Vendas Não Concluidas</th>
      <th>Ultimos Orçamentos</th>
@@ -67,7 +140,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td> <?php
     $codigo_usuario = $_SESSION['codigo'];
     $codigo_usuario = $_SESSION['codigo'];
-    $sql1 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='fechado'";
+    $sql1 = "select * from pedido WHERE status ='fechado'";
     $resultado1 = mysqli_query($cbd->conecta(),$sql1);
     while ($dados1 = mysqli_fetch_array($resultado1)){
     $codigo = $dados1['codigo_pedido'];
@@ -81,7 +154,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     ?></td>
      <td><?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql2 = "select* from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='aberto'";
+    $sql2 = "select* from pedido WHERE status ='aberto'";
     $resultado2 = mysqli_query($cbd->conecta(),$sql2);
     while ($dados2 = mysqli_fetch_array($resultado2)){
     $codigo = $dados2['codigo_pedido'];
@@ -96,7 +169,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td>
      <?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql3 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='orcamento'";
+    $sql3 = "select * from pedido WHERE status ='orcamento'";
     $resultado3 = mysqli_query($cbd->conecta(),$sql3);
     while ($dados3 = mysqli_fetch_array($resultado3)){
     $codigo = $dados3['codigo_pedido'];
@@ -114,11 +187,11 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  </table>
    
    
-</fieldset>
-<fieldset>
- <legend>DADOS ADMINISTRATIVOS</legend>
+
+ 
    <br/> 
- <table border="1" bgcolor="#9cf">
+ <table>
+     <legend class="legend">DADOS ADMINISTRATIVOS</legend>
      <th>Ultimos Usuarios Cadastrados</th>
      <th>Ultimos Clientes Cadastrados</th>
      <th>Ultimos Fornecedores Cadastrados</th>
@@ -135,12 +208,11 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
  </table>
    
-   
-</fieldset>
-<fieldset>
- <legend>DADOS FINANCEIRO</legend>
+
+ 
    <br/> 
- <table border="1" bgcolor="#9cf">
+ <table>
+     <legend class="legend">DADOS FINANCEIRO</legend>
      <th>Receita</th>
      <th>Despesa</th>
      <th>Faturamentos</th>
@@ -156,11 +228,11 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-</fieldset>
-<fieldset>
- <legend>DADOS ESTOQUE</legend>
+
+ 
    <br/> 
- <table border="1" bgcolor="#9cf">
+ <table>
+     <legend class="legend">DADOS ESTOQUE</legend>
      <th>Quantidade de Itens</th>
      <th>Itens com Baixo Estoque</th>
      <th>Poriduto com Pouc Saida</th>
@@ -176,11 +248,11 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-</fieldset>
-<fieldset>
- <legend>DATAS COMEMORATIVAS</legend>
+
+ 
    <br/> 
- <table border="1" bgcolor="#9cf">
+ <table>
+     <legend class="legend">DATAS COMEMORATIVAS</legend>
      <th>Aniversariante do Més</th>
      <th>Aniversariante do Dia</th>
      <th>Data Parceria do Més</th>
@@ -196,4 +268,6 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-</fieldset>
+   </fieldset>
+    </body>
+</html>

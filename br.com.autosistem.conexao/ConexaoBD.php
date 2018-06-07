@@ -15,7 +15,7 @@ class ConexaoBD {
    public function conecta()
    {
        $bd = mysqli_connect("127.0.0.1", "root", "", "auto_pecas");
-       mysqli_select_db($bd,'auto_pecas'); 
+      mysqli_select_db($bd,'auto_pecas'); 
        return $bd;
        
        

@@ -67,6 +67,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
                 list-style: none;
                 overflow: hidden;
                 max-height: 0;
+               
                 transition: all .4s linear;
                     
             }
