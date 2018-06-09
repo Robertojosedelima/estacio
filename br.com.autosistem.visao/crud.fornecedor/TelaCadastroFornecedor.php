@@ -11,7 +11,7 @@ and open the template in the editor.
         <title>CADASTRO DE FORNECEDOR</title>
        
        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <style>
+       <style type="text/css">
             *{
                 margin: 0;
                 padding: 0;
@@ -19,11 +19,18 @@ and open the template in the editor.
                 
             }
             body{
-                background-color: #e8e8e8;
+                background-color: #9cf;
                
                
             }
-            
+            fieldset{
+                border: 1px solid #434343;
+                
+            }
+            table{
+                font-family: Arial;
+                margin-left: 20px;
+            }
             </style>
     
     
@@ -37,6 +44,7 @@ and open the template in the editor.
             
  <!-- DADOS FORNECEDOR-->
 <fieldset>
+    
  <legend>Dados Pessoais</legend>
    <br/> 
  <table >

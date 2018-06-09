@@ -9,6 +9,31 @@ and open the template in the editor.
         <title>AUTO SYSTEM LOGIN</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <style type="text/css">
+             table{
+              border-spacing:0px;
+              border-collapse:collapse;
+              border: 1px solid #7b8085;
+              font-family: Arial;
+              font-size: 15px;
+              margin-top: 180px;
+              
+              }
+              td,tr{
+              background-color: #f2673a;
+              
+              }
+              body{
+              background-color: #9cf;    
+              }
+              .submit{
+                  margin-left: 210px;
+              }
+            .inp{
+                  margin-left: 7px;
+              }
+        </style>
     </head>
     <body>
  
@@ -17,19 +42,19 @@ and open the template in the editor.
             <form name="formulario de login" action="GerenciaLogin.php" method="POST">
                 <table>
                 <tr><td>
-                <img src="../../imagem/logo autosistme.jpg" width="250" height="237" alt="logo autosistme"/>
+                        <img src="../../imagem/logo autosistme.png" width="300" height="180" alt="logo autosistme"/>
 
                 </td></tr>        
                 <tr><td>
                 <label for="name">Login:</label>
-                <input   type="text" name="usuario" /> 
+                <input  size="25" class="inp" type="text" name="usuario" /> 
                 </td></tr>
                 <tr><td>
-                        <label for="name">Senha</label>        
-                        <input type="password" name="senha" />
+                        <label for="name">Senha:</label>        
+                        <input size="25" type="password" name="senha" />
                 </td></tr>
                 <tr><td>
-                        <input type="submit" value="Logar" name="Login" />
+                        <input class="submit" type="submit" value="Logar" name="Login" />
                 </td></tr>
                 </table>
              

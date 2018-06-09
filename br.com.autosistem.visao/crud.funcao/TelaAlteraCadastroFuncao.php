@@ -20,6 +20,27 @@ $cbd = new ConexaoBD();
     <head>
         <title>ALTERA CADASTRO DE FUNÇÃO</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                background-color: #f2673a;
+               
+               
+            }
+            fieldset{
+                border: 1px solid #434343;
+                
+            }
+            table{
+                font-family: Arial;
+                margin-left: 20px;
+            }
+            </style>
     </head>
     <body>
              <div>ALTERA CADASTRO DE FUNÇÃO</div>
