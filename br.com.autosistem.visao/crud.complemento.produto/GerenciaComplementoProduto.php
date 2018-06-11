@@ -1,3 +1,68 @@
+<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                
+               
+               
+            }
+           
+            table,td,tr{
+                font-family: Arial;
+                margin-left: 20px;
+                border: 1px solid #aaa;
+                background-color: #fafafa;
+                font-family: Arial;
+                
+            }
+            th{
+                text-align: left;
+                border: 1px solid #aaa;
+                background-color: #9cf;
+                font-family: Arial;
+                
+            }
+            .novo{
+                text-decoration: none;
+                background-color: #9cf;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 20px;
+            }
+            .novo:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .alterar{
+                background-color: #f2673a;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .deletar{
+                background-color: #ea0909;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .deletar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            </style> 
 <?php
 
 /* 
@@ -11,12 +76,12 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
 
     ?>
 
-<a href="TelaCadastraComplementoProduto.php">Nova  Complemento de Produto +</a></br></br>
+            <a class="novo" href="TelaCadastraComplementoProduto.php">Novo Complemento de Produto</a></br></br>
 
         
            
     <?php
-   echo"<table border=1>";
+   echo"<table>";
    echo"<th>C.Prod</th>";
    echo"<th>C.Forn</th>";
    echo"<th>C.Compl</th>";
@@ -78,10 +143,10 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroProdutoBD.php");
        echo"</td>";
        
        echo"<td>";
-       echo"<a href='TelaAlteraComplementoProduto.php?id=".$codigo_complemento."'>Alterar</a>";
+       echo"<a class=alterar href='TelaAlteraComplementoProduto.php?id=".$codigo_complemento."'>Alterar</a>";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaComplementoProduto.php?id=".$codigo_complemento."'>Deletar</a>";
+       echo"<a class=deletar href='DeletaComplementoProduto.php?id=".$codigo_complemento."'>Deletar</a>";
        echo"</td>";
        echo"</tr>";
        }

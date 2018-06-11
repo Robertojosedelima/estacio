@@ -1,3 +1,80 @@
+<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                
+               
+               
+            }
+           
+            table,td,tr{
+                font-family: Arial;
+                margin-left: 20px;
+                border: 1px solid #aaa;
+                background-color: #fafafa;
+                font-family: Arial;
+                
+            }
+            th{
+                text-align: left;
+                border: 1px solid #aaa;
+                background-color: #9cf;
+                font-family: Arial;
+                
+            }
+            .novo{
+                text-decoration: none;
+                background-color: #9cf;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 20px;
+            }
+            .novo:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .alterar{
+                background-color: #f2673a;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .deletar{
+                background-color: #ea0909;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .deletar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            legend{color: #434343;
+               font-weight:bolder;
+               padding: 0px;
+               font-family: Arial;
+               background-color: #9cf;
+               margin-left: 20px;}
+            
+        .legend{color: #434343;
+               font-weight:bolder;
+               padding: 0px;
+               font-family: Arial;
+               background-color: #7b8085;}
+            </style>   
 <?php
 require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $pedido=$_GET["pedido"];
@@ -21,10 +98,12 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $dados2 = mysqli_fetch_assoc($resultado2);
 
 ?>
+<body>
 <fieldset>
- <legend>DADOS DO PEDIDO</legend>
+     <legend class="legend">DADOS DO PEDIDO</legend>
    <br/> 
- <table border="1" bgcolor="#9cf">
+ <table>
+     
      <th>Numero</th>
      <th>Cliente</th>
      <th>Vendedor</th>
@@ -40,14 +119,16 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      </tr>
 
  </table>
-  
-</fieldset>
+   <br>
+  </fieldset>
+<br>
 
- <body>
-         
+ 
+<fieldset>
+<legend class="legend">ESCOLHA OS ITENS DO PEDIDO </legend>
  <form name = "cadastro-novo-pedido" action="ItemPedido.php" method="post">
-     <fieldset>
-     <legend>ESCOLHA OS ITENS DO PEDIDO </legend>
+     
+     
      <br/>
      <table>
      <tr><td>
@@ -87,13 +168,15 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     </table>
      
      
- </fieldset>
+ 
  </form>
- <fieldset>
- <legend>ITENS ESCOLHIDOS</legend>
+<br>
+</fieldset>
+<br>
+ <legend class="legend">ITENS ESCOLHIDOS</legend>
        <?php
        
-   echo"<table border=1>";
+   echo"<table>";
    echo"<th>Codigo</th>";
    echo"<th>Nome</th>";
    echo"<th>Modelo</th>";
@@ -148,7 +231,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
        echo"$sub_total";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaItem.php?id=".$codigo_item_pedido."&pedido=".$pedido."'>Deletar</a>";
+       echo"<a class=deletar href='DeletaItem.php?id=".$codigo_item_pedido."&pedido=".$pedido."'>Deletar</a>";
        
        echo"</td>";
        echo"</tr>";
@@ -164,10 +247,10 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
        echo"</table>";
    
     ?>
- </fieldset>
+ <br>
      <form name = "finalizar-novo-pedido" action="FinalizarPedido.php" method="post">
-     <fieldset>
-     <legend>ESCOLHA A FORMA DE PAGAMENTO </legend>
+         <fieldset>
+     <legend class="legend">ESCOLHA A FORMA DE PAGAMENTO </legend>
      <br/>
      <table>
      <tr><td>
@@ -187,12 +270,18 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
          
      </td></tr>
     </table>
+     <br>
+         </fieldset>
      
      
-     
- </fieldset>
+
  </form>
-     <a href='GerenciaCadastroPedido.php'>Retornar Para Pedidos Em Aberto</a></br>
-     <a href='../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php'>Retornar Para Pedidos Em Orçamento</a></br>
-     <a href='../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php'>Retornar Para Pedidos Finalizados</a>
+     <br>
+ <fieldset>
+     <legend class="legend">RETORNE</legend>
+     <br>
+     <a class="novo" href='GerenciaCadastroPedido.php'>Pedidos Em Aberto</a></br>
+     <a class="novo" href='../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php'>Pedidos Em Orçamento</a></br>
+     <a class="novo" href='../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php'>Pedidos Finalizados</a>
+     </fieldset>
  </body>

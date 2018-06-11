@@ -1,3 +1,68 @@
+<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                
+               
+               
+            }
+           
+            table,td,tr{
+                font-family: Arial;
+                margin-left: 20px;
+                border: 1px solid #aaa;
+                background-color: #fafafa;
+                font-family: Arial;
+                
+            }
+            th{
+                text-align: left;
+                border: 1px solid #aaa;
+                background-color: #9cf;
+                font-family: Arial;
+                
+            }
+            .novo{
+                text-decoration: none;
+                background-color: #9cf;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 20px;
+            }
+            .novo:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .alterar{
+                background-color: #f2673a;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .deletar{
+                background-color: #ea0909;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .deletar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            </style>
 <?php
 
 /* 
@@ -11,14 +76,14 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroFornecimentoBD.ph
 
     ?>
 
-<a href="TelaCadastroFornecimento.php">Nova Ordem de Fornecimento +</a></br></br>
+            <a class="novo" href="TelaCadastroFornecimento.php">Nova Ordem de Fornecimento</a></br></br>
 
 
     
         
            
     <?php
-   echo"<table border=1>";
+   echo"<table>";
    echo"<th>Codigo</th>";
    echo"<th>Produto</th>";
    echo"<th>Modelo</th>";
@@ -61,10 +126,10 @@ include("../../br.com.autosistem.modelo/modelo.estoque/CadastroFornecimentoBD.ph
        echo"$valor";
        echo"</td>";
        echo"<td>";
-       echo"<a href='TelaAlteraCadastroFornecimento.php?id=".$codigo."'>Alterar</a>";
+       echo"<a class=alterar href='TelaAlteraCadastroFornecimento.php?id=".$codigo."'>Alterar</a>";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaFornecimento.php?id=".$codigo."'>Deletar</a>";
+       echo"<a class=deletar href='DeletaFornecimento.php?id=".$codigo."'>Deletar</a>";
        echo"</td>";
        echo"</tr>";
        }

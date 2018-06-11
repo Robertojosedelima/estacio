@@ -1,3 +1,68 @@
+<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                
+               
+               
+            }
+           
+            table,td,tr{
+                font-family: Arial;
+                margin-left: 20px;
+                border: 1px solid #aaa;
+                background-color: #fafafa;
+                font-family: Arial;
+                
+            }
+            th{
+                text-align: left;
+                border: 1px solid #aaa;
+                background-color: #9cf;
+                font-family: Arial;
+                
+            }
+            .novo{
+                text-decoration: none;
+                background-color: #9cf;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 20px;
+            }
+            .novo:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .alterar{
+                background-color: #f2673a;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .deletar{
+                background-color: #ea0909;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .deletar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            </style>
 <?php
 
 /* 
@@ -10,7 +75,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
 
 ?>
 
-<a href="../../br.com.autosistem.visao/crud.pedidos/TelaCadastroPedido.php" >Novo Pedido +</a></br></br>
+            <a class="novo" href="../../br.com.autosistem.visao/crud.pedidos/TelaCadastroPedido.php" >Novo Pedido</a></br></br>
    SÓ PEDIDOS EM ORÇAMENTO. 
     <?php  
 session_start();
@@ -21,7 +86,7 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
 
 ?>               
     <?php
-   echo"<table border=1>";
+   echo"<table>";
    echo"<th>Numero</th>";
    echo"<th>Cliente</th>";
    echo"<th>Data</th>";
@@ -81,10 +146,10 @@ if(!isset($_SESSION["usuario"])|| !isset($_SESSION["senha"])){
        echo"$vendedor_fk";
        echo"</td>";
        echo"<td>";
-       echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+       echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
        echo"</td>";
        echo"<td>";
-       echo"<a href='../../br.com.autosistem.visao/crud.pedidos/DeletaPedido.php?id=".$codigo."'>Deletar</a>";
+       echo"<a class=deletar href='../../br.com.autosistem.visao/crud.pedidos/DeletaPedido.php?id=".$codigo."'>Deletar</a>";
        echo"</td>";
        echo"</tr>";
        }

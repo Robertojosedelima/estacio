@@ -10,6 +10,27 @@ and open the template in the editor.
     <head>
         <title>CADASTRO DE SUA EMPRESA</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                background-color: #9cf;
+               
+               
+            }
+            fieldset{
+                border: 1px solid #434343;
+                
+            }
+            table{
+                font-family: Arial;
+                margin-left: 20px;
+            }
+            </style>
     </head>
     <body>
         <div>CADASTRO DE EMPRESA RESPONSÁVEL</div>

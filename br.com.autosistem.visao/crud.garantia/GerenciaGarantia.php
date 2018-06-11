@@ -1,3 +1,68 @@
+<style type="text/css">
+            *{
+                margin: 0;
+                padding: 0;
+              
+                
+            }
+            body{
+                
+               
+               
+            }
+           
+            table,td,tr{
+                font-family: Arial;
+                margin-left: 20px;
+                border: 1px solid #aaa;
+                background-color: #fafafa;
+                font-family: Arial;
+                
+            }
+            th{
+                text-align: left;
+                border: 1px solid #aaa;
+                background-color: #9cf;
+                font-family: Arial;
+                
+            }
+            .novo{
+                text-decoration: none;
+                background-color: #9cf;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 20px;
+            }
+            .novo:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .alterar{
+                background-color: #f2673a;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            .deletar{
+                background-color: #ea0909;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                
+            }
+            .deletar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            </style> 
 <?php
 
 /* 
@@ -11,12 +76,12 @@ include("../../br.com.autosistem.modelo/modelo.garantia/CadastroGarantiaBD.php")
 
     ?>
 
-<a href="TelaCadastraGarantia.php">Nova  Solicitação de Garantia +</a></br></br>
+            <a class="novo" href="TelaCadastraGarantia.php">Nova Solicitação de Garantia</a></br></br>
 
         
            
     <?php
-   echo"<table border=1>";
+   echo"<table>";
    echo"<th>Codigo da Solicitação</th>";
    echo"<th>Data da Solicitação</th>";
    echo"<th>Nome do Solicitante</th>";
@@ -54,10 +119,10 @@ include("../../br.com.autosistem.modelo/modelo.garantia/CadastroGarantiaBD.php")
        
        
        echo"<td>";
-       echo"<a href='TelaAlteraGarantia.php?id=".$codigo."'>Alterar</a>";
+       echo"<a class=alterar href='TelaAlteraGarantia.php?id=".$codigo."'>Alterar</a>";
        echo"</td>";
        echo"<td>";
-       echo"<a href='DeletaGarantia.php?id=".$codigo."'>Deletar</a>";
+       echo"<a class=deletar href='DeletaGarantia.php?id=".$codigo."'>Deletar</a>";
        echo"</td>";
        echo"</tr>";
        }
