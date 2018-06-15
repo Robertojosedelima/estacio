@@ -75,7 +75,7 @@ include("../../br.com.autosistem.modelo/modelo.empresa/CadastroClientePessoaJuri
 
 
     ?>
-            <a class="novo" href="TelaCadastroClientePessoaJuridica.php">Novo Cliente Pessoa Juridica +</a></br></br>
+            <a class="novo" href="TelaCadastroClientePessoaJuridica.php">Novo Cliente Pessoa Juridica</a></br></br>
 
 
     
