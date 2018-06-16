@@ -140,28 +140,28 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td> <?php
     $codigo_usuario = $_SESSION['codigo'];
     $codigo_usuario = $_SESSION['codigo'];
-    $sql1 = "select * from pedido WHERE status ='fechado'";
+    $sql1 = "select * from pedido WHERE status ='fechado' ORDER BY codigo_pedido DESC LIMIT 5";
     $resultado1 = mysqli_query($cbd->conecta(),$sql1);
     while ($dados1 = mysqli_fetch_array($resultado1)){
     $codigo = $dados1['codigo_pedido'];
     echo"<br>";
     echo $dados1['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
     ?></td>
      <td><?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql2 = "select* from pedido WHERE status ='aberto'";
+    $sql2 = "select* from pedido WHERE status ='aberto' ORDER BY codigo_pedido DESC LIMIT 5";
     $resultado2 = mysqli_query($cbd->conecta(),$sql2);
     while ($dados2 = mysqli_fetch_array($resultado2)){
     $codigo = $dados2['codigo_pedido'];
     echo"<br>";
     echo $dados2['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -169,14 +169,14 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td>
      <?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql3 = "select * from pedido WHERE status ='orcamento'";
+    $sql3 = "select * from pedido WHERE status ='orcamento' ORDER BY codigo_pedido DESC LIMIT 5";
     $resultado3 = mysqli_query($cbd->conecta(),$sql3);
     while ($dados3 = mysqli_fetch_array($resultado3)){
     $codigo = $dados3['codigo_pedido'];
     echo"<br>";
     echo $dados3['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -193,17 +193,101 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  <table>
      <legend class="legend">DADOS ADMINISTRATIVOS</legend>
      <th>Ultimos Usuarios Cadastrados</th>
-     <th>Ultimos Clientes Cadastrados</th>
+     <th>Ultimos Clientes PF</th>
+     <th>Ultimos Clientes PJ</th>
      <th>Ultimos Fornecedores Cadastrados</th>
      <th>Ultimos Funções Cadastradas</th>
      <th>Ultimos Funcionarios Cadastrados</th>
      
      <tr>
-     <td>USUARIO</td>
-     <td>CLIENTES</td>
-     <td>FORNECEDORES</td>
-     <td>FUNÇÕES</td>
-     <td>FUNCIONARIOS</td>
+      <td>
+     <?php
+    if($_SESSION["nome"]=="ADM-MASTER"){
+    $sql4 = "select * from cadastro_usuario ORDER BY codigo_usuario DESC LIMIT 5 ";
+    }else{
+    $sql4 = "select * from cadastro_usuario WHERE area!='Administrativo' ORDER BY codigo_usuario DESC LIMIT 5";
+    }
+    
+    $resultado4 = mysqli_query($cbd->conecta(),$sql4);
+    while ($dados4 = mysqli_fetch_array($resultado4)){
+    $codigo = $dados4['codigo_usuario'];
+    echo"<br>";
+    echo $dados4['usuario'];
+    echo"<a href='../../br.com.autosistem.visao/crud.usuario/TelaAlteraCadastroUsuario.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
+       <td>
+     <?php
+    
+    $sql5 = "select * from cadastro_cliente_pessoa_fisica ORDER BY cpf DESC LIMIT 5 ";
+    $resultado5 = mysqli_query($cbd->conecta(),$sql5);
+    while ($dados5 = mysqli_fetch_array($resultado5)){
+    $codigo = $dados5['cpf'];
+    echo"<br>";
+    echo $dados5['nome'];
+    echo"<a href='../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/TelaAlteraCadastroClientePessoaFisica.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
+     <td>
+     <?php
+    
+    $sql6 = "select * from cadastro_cliente_pessoa_juridica ORDER BY cpf_cnpj DESC LIMIT 5 ";
+    $resultado6 = mysqli_query($cbd->conecta(),$sql6);
+    while ($dados6 = mysqli_fetch_array($resultado6)){
+    $codigo = $dados6['cpf_cnpj'];
+    echo"<br>";
+    echo $dados6['razao_social'];
+    echo"<a href='../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/TelaAlteraCadastroClientePessoaJuridica.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
+    <td>
+     <?php
+    
+    $sql7 = "select * from cadastro_fornecedor ORDER BY cpf_cnpj DESC LIMIT 5 ";
+    $resultado7 = mysqli_query($cbd->conecta(),$sql7);
+    while ($dados7 = mysqli_fetch_array($resultado7)){
+    $codigo = $dados7['cpf_cnpj'];
+    echo"<br>";
+    echo $dados7['razao_social'];
+    echo"<a href='../../br.com.autosistem.visao/crud.fornecedor/TelaAlteraCadastroFornecedor.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
+     <td>
+     <?php
+    
+    $sql8 = "select * from cadastro_funcao ORDER BY codigo_funcao DESC LIMIT 5 ";
+    $resultado8 = mysqli_query($cbd->conecta(),$sql8);
+    while ($dados8 = mysqli_fetch_array($resultado8)){
+    $codigo = $dados8['codigo_funcao'];
+    echo"<br>";
+    echo $dados8['nome'];
+    echo"<a href='../../br.com.autosistem.visao/crud.funcao/TelaAlteraCadastroFuncao.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
+     <td>
+     <?php
+    
+    $sql9 = "select * from cadastro_funcionario WHERE nome!='ADM-MASTER' ORDER BY cpf DESC LIMIT 5 ";
+    $resultado9 = mysqli_query($cbd->conecta(),$sql9);
+    while ($dados9 = mysqli_fetch_array($resultado9)){
+    $codigo = $dados9['cpf'];
+    echo"<br>";
+    echo $dados9['nome'];
+    echo"<a href='../../br.com.autosistem.visao/crud.funcionario/TelaAlteraCadastroFuncionario.php?id=".$codigo."'> Alterar</a>";
+        echo "</br>"; 
+     }
+    ?>
+    </td>
      </tr>
 
  </table>
