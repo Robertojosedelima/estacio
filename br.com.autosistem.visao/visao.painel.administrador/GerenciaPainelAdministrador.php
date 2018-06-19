@@ -1,14 +1,11 @@
 <html>
+    
 <head>
     <title>Gerenciamento adm</title>
     <style type="text/css">
         
         table{border-spacing:0px;
               border-collapse:collapse;
-              
-             
-              
-             
           }
         th{border:1px solid #aaa;
            background-color: #f2673a;
@@ -34,7 +31,8 @@
            font-size: 16px;
            
            }
-        td{border:1px solid #aaa}
+        td{border:1px solid #aaa;
+        }
         tr{background-color: #ffffff;}
         fieldset{background-color: #9cf;
                  margin-left: 300px;
@@ -62,7 +60,24 @@
         body{ background-color: #e8e8e8;
              margin-left: 50px;
               margin-top: 10px;}
-        
+        .alterar{
+                
+            background-color: #e4b691;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 60px;
+                
+               
+                
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
+            
         
         
     </style>
@@ -129,7 +144,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  <fieldset class="field1">   
  <legend ></legend>
   
- <table>
+ <table >
      <legend class="legend">ULTIMAS VENDAS & ORÇAMENTOS</legend>
      <th>Ultimas Vendas Realizadas</th>
      <th>Ultimas Vendas Não Concluidas</th>
@@ -147,7 +162,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados1['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -161,7 +176,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados2['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -176,7 +191,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados3['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -213,7 +228,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados4['codigo_usuario'];
     echo"<br>";
     echo $dados4['usuario'];
-    echo"<a href='../../br.com.autosistem.visao/crud.usuario/TelaAlteraCadastroUsuario.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.usuario/TelaAlteraCadastroUsuario.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -227,7 +242,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados5['cpf'];
     echo"<br>";
     echo $dados5['nome'];
-    echo"<a href='../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/TelaAlteraCadastroClientePessoaFisica.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/TelaAlteraCadastroClientePessoaFisica.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -241,7 +256,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados6['cpf_cnpj'];
     echo"<br>";
     echo $dados6['razao_social'];
-    echo"<a href='../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/TelaAlteraCadastroClientePessoaJuridica.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/TelaAlteraCadastroClientePessoaJuridica.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -255,7 +270,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados7['cpf_cnpj'];
     echo"<br>";
     echo $dados7['razao_social'];
-    echo"<a href='../../br.com.autosistem.visao/crud.fornecedor/TelaAlteraCadastroFornecedor.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.fornecedor/TelaAlteraCadastroFornecedor.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -269,7 +284,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados8['codigo_funcao'];
     echo"<br>";
     echo $dados8['nome'];
-    echo"<a href='../../br.com.autosistem.visao/crud.funcao/TelaAlteraCadastroFuncao.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.funcao/TelaAlteraCadastroFuncao.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -283,7 +298,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados9['cpf'];
     echo"<br>";
     echo $dados9['nome'];
-    echo"<a href='../../br.com.autosistem.visao/crud.funcionario/TelaAlteraCadastroFuncionario.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.funcionario/TelaAlteraCadastroFuncionario.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>

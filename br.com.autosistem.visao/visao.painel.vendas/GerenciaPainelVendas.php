@@ -62,6 +62,23 @@
         body{ background-color: #e8e8e8;
              margin-left: 50px;
               margin-top: 10px;}
+        .alterar{
+                
+            background-color: #e4b691;
+                text-decoration: none;
+                border: 1px solid #aaa;
+                color: #030303;
+                margin-left: 60px;
+                
+               
+                
+                
+            }
+            .alterar:hover{
+                background-color: #7b8085;
+                color: #fafafa;
+                
+            }
         
         
         
@@ -144,7 +161,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados1['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
@@ -158,7 +175,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados2['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
@@ -173,7 +190,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados3['codigo_pedido'];
     
-    echo"<a href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
