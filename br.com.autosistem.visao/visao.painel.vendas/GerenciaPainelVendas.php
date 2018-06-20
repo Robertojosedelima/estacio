@@ -154,28 +154,28 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td> <?php
     $codigo_usuario = $_SESSION['codigo'];
     $codigo_usuario = $_SESSION['codigo'];
-    $sql1 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='fechado'";
+    $sql1 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='fechado' ORDER BY codigo_pedido DESC LIMIT 5 ";
     $resultado1 = mysqli_query($cbd->conecta(),$sql1);
     while ($dados1 = mysqli_fetch_array($resultado1)){
     $codigo = $dados1['codigo_pedido'];
     echo"<br>";
     echo $dados1['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
     ?></td>
      <td><?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql2 = "select* from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='aberto'";
+    $sql2 = "select* from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='aberto' ORDER BY codigo_pedido DESC LIMIT 5 ";
     $resultado2 = mysqli_query($cbd->conecta(),$sql2);
     while ($dados2 = mysqli_fetch_array($resultado2)){
     $codigo = $dados2['codigo_pedido'];
     echo"<br>";
     echo $dados2['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar  target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
@@ -183,14 +183,14 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <td>
      <?php
     $codigo_usuario = $_SESSION['codigo'];
-    $sql3 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='orcamento'";
+    $sql3 = "select * from pedido WHERE vendedor_fk ='$codigo_usuario' AND status ='orcamento'ORDER BY codigo_pedido DESC LIMIT 5 ";
     $resultado3 = mysqli_query($cbd->conecta(),$sql3);
     while ($dados3 = mysqli_fetch_array($resultado3)){
     $codigo = $dados3['codigo_pedido'];
     echo"<br>";
     echo $dados3['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'>Alterar</a>";
         echo "</br>";
         
      }
@@ -234,7 +234,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
             $valores = $dados5['total'];
             $total_de_vendas = $valores + @$total_de_vendas;
    }
-    echo $total_de_vendas;
+    echo @$total_de_vendas;
     ?></td>
      <td><?php
             $sql6 = "select * from item_pedido ip "

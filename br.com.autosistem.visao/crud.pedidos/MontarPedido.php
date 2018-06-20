@@ -280,8 +280,9 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
  <fieldset>
      <legend class="legend">RETORNE</legend>
      <br>
-     <a class="novo" href='GerenciaCadastroPedido.php'>Pedidos Em Aberto</a></br>
-     <a class="novo" href='../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php'>Pedidos Em Orçamento</a></br>
+     
+     <a class="novo" href='GerenciaCadastroPedido.php'>Pedidos Em Aberto</a></br><BR>
+     <a class="novo" href='../../br.com.autosistem.visao/crud.orcamento/GerenciaCadastroOrcamento.php'>Pedidos Em Orçamento</a></br><BR>
      <a class="novo" href='../../br.com.autosistem.visao/crud.vendas/GerenciaCadastroVendas.php'>Pedidos Finalizados</a>
      </fieldset>
  </body>

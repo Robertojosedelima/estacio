@@ -93,7 +93,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $endereco = $dados['rua'].$dados['numero'];
     
     
-     
+    date_default_timezone_set('America/Sao_Paulo'); 
 ?>
 
 <body>
@@ -162,7 +162,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados1['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -176,7 +176,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados2['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -191,7 +191,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     echo"<br>";
     echo $dados3['codigo_pedido'];
     
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.pedidos/MontarPedido.php?pedido=".$codigo."'> Alterar</a>";
         echo "</br>";
         
      }
@@ -228,7 +228,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados4['codigo_usuario'];
     echo"<br>";
     echo $dados4['usuario'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.usuario/TelaAlteraCadastroUsuario.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.usuario/TelaAlteraCadastroUsuario.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -242,7 +242,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados5['cpf'];
     echo"<br>";
     echo $dados5['nome'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/TelaAlteraCadastroClientePessoaFisica.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.cliente.pessoa.fisica/TelaAlteraCadastroClientePessoaFisica.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -256,7 +256,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados6['cpf_cnpj'];
     echo"<br>";
     echo $dados6['razao_social'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/TelaAlteraCadastroClientePessoaJuridica.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.cliente.pessoa.juridica/TelaAlteraCadastroClientePessoaJuridica.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -270,7 +270,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados7['cpf_cnpj'];
     echo"<br>";
     echo $dados7['razao_social'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.fornecedor/TelaAlteraCadastroFornecedor.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.fornecedor/TelaAlteraCadastroFornecedor.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -284,7 +284,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados8['codigo_funcao'];
     echo"<br>";
     echo $dados8['nome'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.funcao/TelaAlteraCadastroFuncao.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.funcao/TelaAlteraCadastroFuncao.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -298,7 +298,7 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
     $codigo = $dados9['cpf'];
     echo"<br>";
     echo $dados9['nome'];
-    echo"<a class=alterar href='../../br.com.autosistem.visao/crud.funcionario/TelaAlteraCadastroFuncionario.php?id=".$codigo."'> Alterar</a>";
+    echo"<a class=alterar target=_blank href='../../br.com.autosistem.visao/crud.funcionario/TelaAlteraCadastroFuncionario.php?id=".$codigo."'> Alterar</a>";
         echo "</br>"; 
      }
     ?>
@@ -312,61 +312,63 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
    <br/> 
  <table>
      <legend class="legend">DADOS FINANCEIRO</legend>
-     <th>Receita</th>
-     <th>Despesa</th>
-     <th>Faturamentos</th>
-     <th>Total de Vendas</th>
-     <th>Total de Serviços</th>
+     
+     <th>Total de Vendas Dia</th>
+     <th>Total de Vendas Més</th>
+     <th>Total de Vendas Ano</th>
      
      <tr>
-     <td>1</td>
-     <td>2</td>
-     <td>3</td>
-     <td>4</td>
-     <td>5</td>
+     
+     <td>R$:<?php
+            $data = date('Y-m-d');
+            $sql10 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.status='fechado'  AND p.data='$data'";
+            $resultado10 = mysqli_query($cbd->conecta(),$sql10);
+            while ($dados10 = mysqli_fetch_array($resultado10)){
+            $valores = $dados10['total'];
+            $total_de_vendas_dia = $valores + @$total_de_vendas_dia;
+   }
+   
+    echo @$total_de_vendas_dia;
+    ?></td>
+     <td>R$:<?php
+            $modelo_ano = date('Y');
+            $modelo_mes = date('m');
+            $sql12 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.status='fechado' AND year(p.data)='$modelo_ano' AND month(p.data)='$modelo_mes'";
+            $resultado12 = mysqli_query($cbd->conecta(),$sql12);
+            while ($dados12 = mysqli_fetch_array($resultado12)){
+            $valores = $dados12['total'];
+            $total_de_vendas_mes = $valores + @$total_de_vendas_mes;
+   }
+   
+    echo @$total_de_vendas_mes;
+    ?></td>
+     <td>R$:<?php
+            $sql16 = "select * from item_pedido ip "
+            . "inner join pedido p on (ip.pedido_fk = p.codigo_pedido)"
+            . "WHERE p.status='fechado' AND year(p.data)='$modelo_ano'";
+            $resultado16 = mysqli_query($cbd->conecta(),$sql16);
+            while ($dados16 = mysqli_fetch_array($resultado16)){
+            $valores = $dados16['total'];
+            $total_de_vendas = $valores + @$total_de_vendas;
+   }
+    echo @$total_de_vendas;
+    ?></td>
+    
      </tr>
 
  </table>
 
  
    <br/> 
- <table>
-     <legend class="legend">DADOS ESTOQUE</legend>
-     <th>Quantidade de Itens</th>
-     <th>Itens com Baixo Estoque</th>
-     <th>Poriduto com Pouc Saida</th>
-     <th>Valor do Estoque</th>
-     <th>Quantidade de Saida Diaria</th>
-     
-     <tr>
-     <td>1</td>
-     <td>2</td>
-     <td>3</td>
-     <td>4</td>
-     <td>5</td>
-     </tr>
-
- </table>
+ 
 
  
    <br/> 
- <table>
-     <legend class="legend">DATAS COMEMORATIVAS</legend>
-     <th>Aniversariante do Més</th>
-     <th>Aniversariante do Dia</th>
-     <th>Data Parceria do Més</th>
-     <th>Data Parceria do Dia</th>
-     <th>Funcionario do Més</th>
-     
-     <tr>
-     <td>1</td>
-     <td>2</td>
-     <td>3</td>
-     <td>4</td>
-     <td>5</td>
-     </tr>
-
- </table>
+ 
    </fieldset>
     </body>
 </html>
