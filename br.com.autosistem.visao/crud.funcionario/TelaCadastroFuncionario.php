@@ -49,15 +49,17 @@ require_once '../../br.com.autosistem.conexao/ConexaoBD.php';
      <tr><td>
      <label for="name">Função:</label>
       <select name ="funcao">
-    <?php
+ 
+          
+          <?php
     $cbd = new ConexaoBD();
     $sql = "select * from cadastro_funcao";
     $resultado = mysqli_query($cbd->conecta(),$sql);
-    while ($dados = mysqli_fetch_array($resultado)){
-        $codigo = $dados['codigo'];
-        $nome = $dados['nome'];
-        $descricao = $dados['descricao'];
-        echo"<option value='$codigo'>$nome</option>";
+    while ($dados2 = mysqli_fetch_array($resultado)){
+        $codigo = $dados2['codigo_funcao'];
+        $nome = $dados2['nome'];
+        $descricao = $dados2['descricao'];
+        echo"<option value='$codigo'>$nome / $codigo</option>";
         
        }
    
